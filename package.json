@@ -4,7 +4,7 @@
   "description": "A server-client demo for implementing websockets protocol",
   "main": "server/server.js",
   "scripts": {
-    "automate": "nodemon ./server/server.js",
+    "automate": "nodemon --exec babel-node ./server/server.js",
     "start": "webpack-dev-server --mode development --hot",
     "build": "webpack --config webpack.config.production.js",
     "test": "jest"
@@ -20,13 +20,14 @@
   "author": "Myron Apostolakis",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
     "@babel/preset-env": "^7.3.4",
-    "babel": "^6.23.0",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.0",
     "core-js": "^2.6.5",
@@ -40,6 +41,7 @@
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
     "redux": "^4.0.1",
+    "remove": "^0.1.5",
     "socket.io": "^2.2.0",
     "socket.io-client": "^2.2.0",
     "style-loader": "^0.23.1",
