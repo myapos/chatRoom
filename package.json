@@ -5,18 +5,46 @@
   "main": "server/server.js",
   "scripts": {
     "automate": "nodemon ./server/server.js",
-    "test": "test"
+    "start": "webpack-dev-server --mode development --hot",
+    "build": "webpack --config webpack.config.production.js",
+    "test": "jest"
   },
   "keywords": [
     "websockets",
-    "node"
+    "node",
+    "express",
+    "socket.io",
+    "react",
+    "redux"
   ],
   "author": "Myron Apostolakis",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.3.4",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.0",
+    "core-js": "^2.6.5",
+    "css-loader": "^2.1.1",
     "express": "^4.16.4",
+    "file-loader": "^3.0.1",
     "http": "^0.0.0",
+    "jest": "^24.3.1",
     "nodemon": "^1.18.10",
-    "socket.io": "^2.2.0"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "socket.io": "^2.2.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }

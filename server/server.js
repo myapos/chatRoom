@@ -2,7 +2,6 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-
 var port = 3000;
 
 app.get('/', function (req, res) {
@@ -17,7 +16,6 @@ io.on('connection', function (socket) {
 });
 
 io.emit('some event', { for: 'everyone' });
-
 
 http.listen(port, function () {
   console.log(`listening on http://localhost:${port}`);
