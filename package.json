@@ -2,10 +2,10 @@
   "name": "websocketsdemo",
   "version": "1.0.0",
   "description": "A server-client demo for implementing websockets protocol",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "start",
-    "automate": "automate",
+    "automate": "nodemon ./server/server.js",
     "test": "test"
   },
   "keywords": [
@@ -15,5 +15,11 @@
     "redux"
   ],
   "author": "Myron Apostolakis",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "http": "^0.0.0",
+    "nodemon": "^1.18.10",
+    "socket.io": "^2.2.0"
+  }
 }
