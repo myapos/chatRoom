@@ -2,17 +2,14 @@
   "name": "websocketsdemo",
   "version": "1.0.0",
   "description": "A server-client demo for implementing websockets protocol",
-  "main": "dist/index.js",
+  "main": "server/server.js",
   "scripts": {
-    "start": "start",
     "automate": "nodemon ./server/server.js",
     "test": "test"
   },
   "keywords": [
     "websockets",
-    "node",
-    "react",
-    "redux"
+    "node"
   ],
   "author": "Myron Apostolakis",
   "license": "ISC",

@@ -2,6 +2,9 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+
+var port = 3000;
+
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/staticFiles/index.html');
 });
@@ -16,6 +19,6 @@ io.on('connection', function (socket) {
 io.emit('some event', { for: 'everyone' });
 
 
-http.listen(3000, function () {
-  console.log('listening on *:3000');
+http.listen(port, function () {
+  console.log(`listening on http://localhost:${port}`);
 });

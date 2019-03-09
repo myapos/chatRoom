@@ -1,7 +1,6 @@
 # webSocketsDemo
-A server-client demo for implementing websockets protocol
+A server-client chat demo for implementing websockets protocol with socket.io
 
 # Commands
 
-- `yarn start` to start client
 - `yarn automate` to start server
