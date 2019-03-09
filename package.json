@@ -1,0 +1,19 @@
+{
+  "name": "websocketsdemo",
+  "version": "1.0.0",
+  "description": "A server-client demo for implementing websockets protocol",
+  "main": "index.js",
+  "scripts": {
+    "start": "start",
+    "automate": "automate",
+    "test": "test"
+  },
+  "keywords": [
+    "websockets",
+    "node",
+    "react",
+    "redux"
+  ],
+  "author": "Myron Apostolakis",
+  "license": "ISC"
+}
