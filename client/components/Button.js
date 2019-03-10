@@ -1,18 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import currentTime from '../utils/currentTime';
 import * as actions from '../store/actions';
 
-const handleMsg = (props) => {
-  const { data, socket } = props;
-  socket.emit('chat message', data);
-  console.log('sending', data);
-}
 
-const Button = (props) => <div
-  className="myBtn"
-  onClick={handleMsg(props)}>
-  Send
-  </div>
+class Button extends Component {
+
+  componentDidMount() {
+    const { socket, receivedData, received } = this.props;
+    //check socket callbacks to avoid multiple listeners and memory leaks
+
+    if (!socket._callbacks['$chat message'] || socket._callbacks['$chat message'].length < 1) {
+      socket.on('chat message', msg => {
+        // console.log('received', received);
+        receivedData({
+          msg: `${msg} #### ${currentTime()}`,
+          timestamp: new Date().getTime()
+        });
+      });
+    }
+  }
+
+  handleMsg() {
+    const { data, socket } = this.props;
+    socket.emit('chat message', data);
+  };
+
+  render() {
+    return (<div
+      className="myBtn"
+      onClick={() => this.handleMsg(this.props)}>
+      Send
+  </div>)
+  }
+}
 
 export default connect(state => state, actions)(Button);

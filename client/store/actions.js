@@ -8,7 +8,7 @@ export const entryChange = data => ({
   data
 });
 
-export const receivedData = received => ({
+export const receivedData = (meta) => ({
   type: RECEIVED_DATA,
-  received
+  meta,
 });
