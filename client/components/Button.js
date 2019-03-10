@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import currentTime from '../utils/currentTime';
 import * as actions from '../store/actions';
 
 
@@ -14,7 +15,7 @@ class Button extends Component {
       socket.on('chat message', msg => {
         // console.log('received', received);
         receivedData({
-          msg,
+          msg: `${msg} #### ${currentTime()}`,
           timestamp: new Date().getTime()
         });
       });
