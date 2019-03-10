@@ -7,12 +7,16 @@ import * as actions from '../store/actions';
 class Button extends Component {
 
   componentDidMount() {
-    const { socket, receivedData } = this.props;
+    const { socket, receivedData, received } = this.props;
     //check socket callbacks to avoid multiple listeners and memory leaks
 
     if (!socket._callbacks['$chat message'] || socket._callbacks['$chat message'].length < 1) {
       socket.on('chat message', msg => {
-        receivedData(msg);
+        // console.log('received', received);
+        receivedData({
+          msg,
+          timestamp: new Date().getTime()
+        });
       });
     }
   }

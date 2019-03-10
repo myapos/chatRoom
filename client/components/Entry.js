@@ -20,7 +20,10 @@ const handleKeyPress = (e, props) => {
 
     if (!socket._callbacks['$chat message'] || socket._callbacks['$chat message'].length < 1) {
       socket.on('chat message', function (msg) {
-        receivedData(msg);
+        receivedData({
+          msg,
+          timestamp: new Date().getTime()
+        });
       });
     }
   }

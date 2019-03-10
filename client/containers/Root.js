@@ -4,7 +4,8 @@ import configureStore from '../store/store';
 import App from './App';
 
 const initialState = {
-  'testState': 'test'
+  'testState': 'test',
+  received: [],
 };
 
 const Root = () => <Provider store={configureStore(initialState)}>
