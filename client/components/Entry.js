@@ -23,7 +23,6 @@ const handleKeyPress = (e, props) => {
         receivedData(msg);
       });
     }
-
   }
 
 }
