@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import currentTime from '../utils/currentTime';
 import * as actions from '../store/actions';
-
+import onChatMsg from '../utils/onChatMsg';
 
 class Button extends Component {
 
   componentDidMount() {
-    const { socket, receivedData, received } = this.props;
+    const { socket, receivedData, firstname, lastname } = this.props;
     //check socket callbacks to avoid multiple listeners and memory leaks
 
     if (!socket._callbacks['$chat message'] || socket._callbacks['$chat message'].length < 1) {
-      socket.on('chat message', msg => {
-        // console.log('received', received);
-        receivedData({
-          msg: `${msg} #### ${currentTime()}`,
-          timestamp: new Date().getTime()
-        });
-      });
+      socket.on('chat message', msg => onChatMsg({
+        receivedData,
+        firstname,
+        lastname,
+        msg
+      }));
     }
   }
 
