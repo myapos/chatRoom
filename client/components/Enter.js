@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../store/actions';
 
-const handleEnter = () => {
-  debugger;
+const handleEnter = (props, inputUserName, inputLastName) => {
+  // get firstname and lastname and keeped them in 
+  // state
+
+  props.enter(inputUserName.current.value, inputLastName.current.value)
+
 }
 
-const Enter = () => {
+const Enter = (props) => {
+  const inputUserName = useRef(null);
+  const inputLastName = useRef(null);
+
   return (<div className="enter">
     <div className="inputs">
       <input
+        ref={inputUserName}
         type="text"
         placeholder="name"
         className="holder"
       />
       <input
+        ref={inputLastName}
         type="text"
         placeholder="lastname"
         className="holder"
@@ -20,10 +31,10 @@ const Enter = () => {
     </div>
     <div
       className="myBtn clearFloat"
-      onClick={() => handleEnter()}>
+      onClick={() => handleEnter(props, inputUserName, inputLastName)}>
       Enter
     </div>
   </div>)
 }
 
-export default Enter;
+export default connect(state => state, actions)(Enter);

@@ -1,7 +1,7 @@
 import * as actions from './actions';
 
 const reducer = (state = {}, action) => {
-  const { type, data, meta } = action;
+  const { type, data, meta, firstname, lastname } = action;
 
   switch (type) {
     case actions.INITIALIZATION:
@@ -22,6 +22,14 @@ const reducer = (state = {}, action) => {
       return {
         ...state,
         received: newValues,
+      };
+
+    case actions.ENTER:
+      return {
+        ...state,
+        firstname,
+        lastname,
+        entered: true,
       };
     default:
       return state;

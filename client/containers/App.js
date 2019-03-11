@@ -17,7 +17,7 @@ const socket = openSocket(`http://localhost:${SERVER_PORT}`);
 const App = (props) =>
   <div className="wrapper">
     {
-      0 ?
+      props.entered ?
         <React.Fragment>
           < Display socket={socket} />
           <Entry socket={socket} />
