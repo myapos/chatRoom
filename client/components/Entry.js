@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import Button from '../components/Button';
 import * as actions from '../store/actions';
@@ -29,16 +29,29 @@ const handleKeyPress = (e, props) => {
   }
 
 }
-const Entry = (props) => <div className="entryWrapper">
-  <input
-    className="entry"
-    onChange={e => handleChange(e, props)}
-    onKeyPress={e => handleKeyPress(e, props)}
-    placeholder="type your message"></input>
-  <Button
-    className="button"
-    socket={props.socket} />
-</div>
 
+const clearInput = (inputEl) => {
+  console.log('entry', inputEl);
+  inputEl.current.value = '';
+}
+
+const Entry = (props) => {
+  const inputEl = useRef(null);
+
+  return <div className="entryWrapper">
+    <input
+      className="entry"
+      ref={inputEl}
+      type="text"
+      onChange={e => handleChange(e, props)}
+      onKeyPress={e => handleKeyPress(e, props)}
+      placeholder="type your message" />
+    <i className="fas fa-backspace custom"
+      onClick={() => clearInput(inputEl)}></i>
+    <Button
+      className="button"
+      socket={props.socket} />
+  </div>
+}
 
 export default connect(state => state, actions)(Entry);

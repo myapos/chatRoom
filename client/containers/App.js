@@ -6,6 +6,7 @@ import Entry from '../components/Entry';
 import * as actions from '../store/actions';
 
 import '../css/css.styl';
+import '../css/fontawesome-free-5.7.2-web/css/all.css';
 import { SERVER_PORT } from '../../constants/common';
 
 const socket = openSocket(`http://localhost:${SERVER_PORT}`);

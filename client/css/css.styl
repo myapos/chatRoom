@@ -6,19 +6,23 @@
 body {
   background-color: gray;
 }
+
 .wrapper {
   width: 50%;
-  margin: 0 auto;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid #eee;
-  background-color: lightgrey
+  background-color: lightgrey;
 }
-
 
 .display {
   background-color: white;
   min-height: 400px;
   border:1px solid darkgray;
+  margin: 5px;
 }
+
 .myBtn {
   border:1px solid #ccc;
   background-color: gray;
@@ -27,17 +31,33 @@ body {
   text-align: center;
   margin: 0 auto;
   width: 10%;
-  display: inline-block;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   float:  left;
+  color: #fff;
 }
 
 .entry {
   width: 80%;
+  height: 40px;
   float: left;
   display: inline-block;
+  text-align: center;
 }
 
 .entryWrapper {
+  margin: 5px;
   width: 100%;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.custom {
+  position:absolute;
+  right: 20%;
+  cursor: pointer;
 }
