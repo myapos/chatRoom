@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions';
 import onChatMsg from '../utils/onChatMsg';
+import clearInput from '../utils/clearInput';
 
 class Button extends Component {
 
@@ -20,8 +21,9 @@ class Button extends Component {
   }
 
   handleMsg() {
-    const { data, socket } = this.props;
-    socket.emit('chat message', data);
+    const { data, socket, firstname, lastname, input } = this.props;
+    socket.emit('chat message', `${firstname} ${lastname}: ${data}`);
+    clearInput(input);
   };
 
   render() {

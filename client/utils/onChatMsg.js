@@ -3,7 +3,7 @@ import currentTime from './currentTime';
 const onChatMsg = ({ receivedData, firstname, lastname, msg }) => {
   // console.log('received', received);
   receivedData({
-    msg: `${firstname} ${lastname}: ${msg} -- ${currentTime()}`,
+    msg: `${msg} -- ${currentTime()}`,
     timestamp: new Date().getTime()
   });
 }
