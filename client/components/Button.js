@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -28,14 +27,13 @@ class Button extends Component {
 
   handleMsg() {
     const { data, socket, firstname, lastname, input } = this.props;
-
     socket.emit('chat message', `${firstname} ${lastname}: ${data}`);
     clearInput(input);
   }
 
   render() {
     return (
-      <div className='myBtn' onClick={() => this.handleMsg(this.props)}>
+      <div className="myBtn" onClick={() => this.handleMsg(this.props)}>
         Send
       </div>
     );
@@ -43,6 +41,7 @@ class Button extends Component {
 }
 
 Button.propTypes = {
+  receivedData: PropTypes.string,
   data: PropTypes.string,
   lastname: PropTypes.string,
   input: PropTypes.string,

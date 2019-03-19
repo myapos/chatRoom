@@ -4,7 +4,7 @@
     "es6": true,
     "node": true
   },
-  "extends": "airbnb",
+  "extends": "phaistos-networks",
   "rules": {
     "func-names": 0,
     "one-var": 0,
