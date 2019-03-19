@@ -1,5 +1,5 @@
-const clearInput = (inputEl) => {
+const clearInput = inputEl => {
   inputEl.current.value = '';
-}
+};
 
 export default clearInput;

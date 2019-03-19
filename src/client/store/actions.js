@@ -7,10 +7,10 @@ export const ENTER = 'ENTER';
 
 export const entryChange = data => ({
   type: ENTRY,
-  data
+  data,
 });
 
-export const receivedData = (meta) => ({
+export const receivedData = meta => ({
   type: RECEIVED_DATA,
   meta,
 });
@@ -18,5 +18,5 @@ export const receivedData = (meta) => ({
 export const enter = (firstname, lastname) => ({
   type: ENTER,
   firstname,
-  lastname
+  lastname,
 });

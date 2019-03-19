@@ -12,7 +12,7 @@ const reducer = (state = {}, action) => {
     case actions.ENTRY:
       return {
         ...state,
-        data
+        data,
       };
     case actions.RECEIVED_DATA:
       state.received.push(meta);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import openSocket from 'socket.io-client';
+import PropTypes from 'prop-types';
 import Display from '../components/Display';
 import Entry from '../components/Entry';
 import Enter from '../components/Enter';
@@ -26,4 +27,7 @@ const App = props =>
     }
   </div>;
 
+App.propTypes = {
+  entered: PropTypes.bool,
+};
 export default connect(state => state, actions)(App);

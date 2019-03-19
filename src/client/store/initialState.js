@@ -6,5 +6,4 @@ const initialState = {
   lastname: '',
 };
 
-
 export default initialState;

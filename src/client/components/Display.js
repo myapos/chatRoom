@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions';
 
-const Display = (props) => <div className="display">
+const Display = props => <div className="display">
   {
     props.received.map(meta => {
       meta.msg = meta.msg.replace('\n', '');
@@ -26,6 +26,6 @@ const Display = (props) => <div className="display">
       </div>);
     })
   }
-</div>
+</div>;
 
 export default connect(state => state, actions)(Display);
