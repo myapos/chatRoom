@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10-browsers-legacy
+      - image: circleci/node:latest-browsers
     steps:
       - checkout
       - run: echo "Installing node packages"
@@ -10,7 +10,7 @@ jobs:
       - run: yarn build
   test:
     docker:
-      - image: circleci/node:10-browsers-legacy
+      - image: circleci/node:latest-browsers
     steps:
       - checkout
       - run: echo "Installing node packages"

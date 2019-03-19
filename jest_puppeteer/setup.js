@@ -14,6 +14,7 @@ module.exports = async function () {
   const browser = await puppeteer.launch({
     headless: mode !== 'development',
     executablePath: 'google-chrome',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
   // This global is not available inside tests but only in global teardown
