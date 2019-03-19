@@ -6,14 +6,11 @@ import onChatMsg from '../utils/onChatMsg';
 import clearInput from '../utils/clearInput';
 
 class Button extends Component {
-  componentDidMount() {
+  componentDidMount () {
     const { socket, receivedData, firstname, lastname } = this.props;
     // check socket callbacks to avoid multiple listeners and memory leaks
 
-    if (
-      !socket._callbacks['$chat message'] ||
-      socket._callbacks['$chat message'].length < 1
-    ) {
+    if (!socket._callbacks['$chat message'] || socket._callbacks['$chat message'].length < 1) {
       socket.on('chat message', msg =>
         onChatMsg({
           receivedData,
@@ -25,16 +22,16 @@ class Button extends Component {
     }
   }
 
-  handleMsg() {
+  handleMsg () {
     const { data, socket, firstname, lastname, input } = this.props;
     socket.emit('chat message', `${firstname} ${lastname}: ${data}`);
     clearInput(input);
   }
 
-  render() {
+  render () {
     return (
       <div className="myBtn" onClick={() => this.handleMsg(this.props)}>
-        Send
+				Send
       </div>
     );
   }
@@ -49,7 +46,4 @@ Button.propTypes = {
   firstname: PropTypes.string,
 };
 
-export default connect(
-  state => state,
-  actions
-)(Button);
+export default connect(state => state, actions)(Button);
