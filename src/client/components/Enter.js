@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions';
+import { isNullOrUndefined } from 'util';
 
 const handleKeyPress = (e, props, inputUserName, inputLastName) => {
   if (e.key.match(/enter/gi)) {
@@ -18,9 +19,16 @@ const Enter = props => {
   const inputUserName = useRef(null);
   const inputLastName = useRef(null);
 
+  const { entered } = props;
+
   return (
     <div className="enter">
       <div className="introText"> Please enter your Name and hit enter!</div>
+      {
+        entered !== ''
+          ? <div className="validatedText"> You have to insert firstname or lastname!</div>
+          : null
+      }
       <div className="inputs">
         <input
           ref={inputUserName}
@@ -28,7 +36,6 @@ const Enter = props => {
           placeholder="name"
           className="holder"
           onKeyPress={e => handleKeyPress(e, props, inputUserName, inputLastName)} />
-
         <input
           ref={inputLastName}
           type="text"

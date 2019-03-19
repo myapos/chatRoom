@@ -29,9 +29,10 @@ Here is a chart of how the package is set up:
 ### TODOS
 
 - [ ] Sessions
-- [ ] Tests -- puppeteer
+- [ ] Add validation
+- [x] Tests -- puppeteer
   - [x] Setup
   - [ ] Add tests
 - [ ] Deploy to server
-- [ ] Automation / CI--> Add Circle CI
+- [x] Automation / CI--> Add Circle CI
 - [ ] Attach files / images etc

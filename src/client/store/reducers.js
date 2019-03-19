@@ -25,11 +25,12 @@ const reducer = (state = {}, action) => {
       };
 
     case actions.ENTER:
+      debugger;
       return {
         ...state,
         firstname,
         lastname,
-        entered: true,
+        entered: firstname !== '' || lastname !== '',
       };
     default:
       return state;

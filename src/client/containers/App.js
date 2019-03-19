@@ -28,6 +28,6 @@ const App = props =>
   </div>;
 
 App.propTypes = {
-  entered: PropTypes.bool,
+  entered: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 export default connect(state => state, actions)(App);

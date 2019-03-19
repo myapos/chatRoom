@@ -1,8 +1,8 @@
 const initialState = {
   'testState': 'test',
   received: [],
-  entered: false,
-  username: '',
+  entered: '',
+  firstname: '',
   lastname: '',
 };
 
