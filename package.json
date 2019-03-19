@@ -7,7 +7,8 @@
 		"automate": "nodemon --exec babel-node ./server/server.js",
 		"start": "webpack-dev-server --mode development --hot",
 		"build": "webpack --config webpack.config.production.js",
-		"test": "jest",
+		"test": "NODE_ENV=production jest",
+		"testDev": "NODE_ENV=development jest",
 		"lint": "eslint"
 	},
 	"lint-staged": {
@@ -23,14 +24,7 @@
 		"verbose": true,
 		"preset": "jest-puppeteer"
 	},
-	"keywords": [
-		"websockets",
-		"node",
-		"express",
-		"socket.io",
-		"react",
-		"redux"
-	],
+	"keywords": [ "websockets", "node", "express", "socket.io", "react", "redux" ],
 	"author": "Myron Apostolakis",
 	"license": "ISC",
 	"dependencies": {
