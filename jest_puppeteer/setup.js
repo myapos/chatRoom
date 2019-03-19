@@ -12,8 +12,8 @@ module.exports = async function () {
 
   const mode = process.env.NODE_ENV;
   const browser = await puppeteer.launch({
-    // headless: mode !== 'development',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    headless: mode !== 'development',
+    // args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
   // This global is not available inside tests but only in global teardown
