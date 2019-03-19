@@ -22,6 +22,10 @@ Here is a chart of how the package is set up:
 
 ![Graph](./graph/dependencygraph.svg)
 
+# Puppeteer and CircleCI
+
+- `https://github.com/xfumihiro/jest-puppeteer-example`
+
 ### TODOS
 
 - [ ] Sessions
