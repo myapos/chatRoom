@@ -29,7 +29,7 @@ Here is a chart of how the package is set up:
 ### TODOS
 
 - [ ] Sessions
-- [ ] Add validation
+- [x] Add validation
 - [x] Tests -- puppeteer
   - [x] Setup
   - [ ] Add tests
