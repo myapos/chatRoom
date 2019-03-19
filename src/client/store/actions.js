@@ -5,6 +5,8 @@ export const RECEIVED_DATA = 'RECEIVED_DATA';
 
 export const ENTER = 'ENTER';
 
+export const EXIT = 'EXIT';
+
 export const entryChange = data => ({
   type: ENTRY,
   data,
@@ -19,4 +21,8 @@ export const enter = (firstname, lastname) => ({
   type: ENTER,
   firstname,
   lastname,
+});
+
+export const exit = () => ({
+  type: EXIT,
 });

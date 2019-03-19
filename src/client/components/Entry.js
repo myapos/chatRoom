@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import Button from './Button';
+import Exit from './Exit';
 import * as actions from '../store/actions';
 import onChatMsg from '../utils/onChatMsg';
 import clearInput from '../utils/clearInput';
@@ -50,6 +51,8 @@ const Entry = props => {
       <Button
         className="button" input={inputEl}
         socket={props.socket} />
+      <Exit
+        className="button" />
     </div>
   );
 };
