@@ -11,7 +11,7 @@
 		"lint": "eslint"
 	},
 	"lint-staged": {
-		"client/css/*.styl": "eslint --fix"
+		"client/**/*.js": "eslint --fix"
 	},
 	"husky": {
 		"hooks": {
