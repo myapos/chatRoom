@@ -12,8 +12,7 @@ module.exports = async function () {
 
   const mode = process.env.NODE_ENV;
   const browser = await puppeteer.launch({
-    headless: mode !== 'development',
-    executablePath: 'google-chrome',
+    // headless: mode !== 'development',
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
