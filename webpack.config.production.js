@@ -70,20 +70,24 @@ config.module.rules = [
     use: ['style-loader', 'css-loader'],
   },
   {
+    test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+    use: 'file-loader',
+  },
+  {
     test: /\.styl$/,
     // use: 'css-loader',
     use: [
       {
-        loader: "style-loader" // creates style nodes from JS strings
+        loader: 'style-loader', // creates style nodes from JS strings
       },
       {
-        loader: "css-loader" // translates CSS into CommonJS
+        loader: 'css-loader', // translates CSS into CommonJS
       },
       {
-        loader: "stylus-loader" // compiles Stylus to CSS
-      }
-    ]
-  }
+        loader: 'stylus-loader', // compiles Stylus to CSS
+      },
+    ],
+  },
 ];
 
 config.mode = 'production';
@@ -99,7 +103,7 @@ config.plugins = [
     uglifyOptions,
   }),
   new webpack.ProvidePlugin({
-    'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+    fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
     Promise: 'es6-promise', // <============ add Promises for IE !!!
   }),
   // new ExtractTextPlugin('player.css'),
