@@ -1,0 +1,29 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true,
+		"jest": true
+	},
+	"extends": "phaistos-networks",
+	"rules": {
+		"func-names": 0,
+		"one-var": 0,
+		"quote-props": 0,
+		"max-len": 0,
+		"camelcase": 0,
+		"one-var-declaration-per-line": 0,
+		"no-unused-expressions": 0,
+		"prefer-template": 0,
+		"max-classes-per-file": 1,
+		"max-lines-per-function": 0,
+		"no-debugger": 0,
+		"react/jsx-filename-extension": 0
+	},
+	"globals": {},
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module"
+	},
+	"plugins": [ "react" ]
+}

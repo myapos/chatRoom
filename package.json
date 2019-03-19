@@ -19,7 +19,18 @@
 			"pre-push": "yarn test && yarn build"
 		}
 	},
-	"keywords": [ "websockets", "node", "express", "socket.io", "react", "redux" ],
+	"jest": {
+		"verbose": true,
+		"preset": "jest-puppeteer"
+	},
+	"keywords": [
+		"websockets",
+		"node",
+		"express",
+		"socket.io",
+		"react",
+		"redux"
+	],
 	"author": "Myron Apostolakis",
 	"license": "ISC",
 	"dependencies": {
@@ -67,6 +78,8 @@
 		"eslint-plugin-react": "^7.12.4",
 		"eslint-plugin-react-hooks": "^1.5.0",
 		"husky": "^1.3.1",
-		"lint-staged": "^8.1.5"
+		"jest-puppeteer": "^4.1.0",
+		"lint-staged": "^8.1.5",
+		"puppeteer": "^1.13.0"
 	}
 }
