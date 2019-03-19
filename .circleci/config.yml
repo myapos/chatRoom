@@ -19,14 +19,7 @@ jobs:
       - run: yarn test
 workflows:
   version: 2
-  test_build_deploy:
+  test_build:
     jobs:
       - build
       - test
-      - deploy:
-          requires:
-            - test
-            - build
-          filters:
-            branches:
-              only: master
