@@ -5,7 +5,7 @@ const PORT = 1234;
 
 const config = {
   entry: {
-    main: './client/index.js',
+    main: './src/client/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -27,7 +27,7 @@ const config = {
       {
         test: /\.js$/,
         use: 'babel-loader',
-        include: [path.resolve(__dirname, './client')],
+        include: [path.resolve(__dirname, './src')],
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,

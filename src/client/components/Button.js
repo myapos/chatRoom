@@ -31,17 +31,17 @@ class Button extends Component {
   render () {
     return (
       <div className="myBtn" onClick={() => this.handleMsg(this.props)}>
-				Send
+        Send
       </div>
     );
   }
 }
 
 Button.propTypes = {
-  receivedData: PropTypes.string,
+  receivedData: PropTypes.func,
   data: PropTypes.string,
   lastname: PropTypes.string,
-  input: PropTypes.string,
+  input: PropTypes.object,
   socket: PropTypes.object,
   firstname: PropTypes.string,
 };

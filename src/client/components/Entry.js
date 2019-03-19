@@ -16,28 +16,25 @@ const handleKeyPress = (e, props, inputEl) => {
   if (e.key.match(/enter/gi)) {
     console.log('pressed enter');
 
-    const {
- data, socket, receivedData, firstname, lastname 
-} = props;
+    const { data, socket, receivedData, firstname, lastname } = props;
     socket.emit('chat message', `${firstname} ${lastname}: ${data}`);
     clearInput(inputEl);
     // check socket callbacks to avoid multiple listeners and memory leaks
 
-    if (
-      !socket._callbacks['$chat message']
-      || socket._callbacks['$chat message'].length < 1
-    ) {
-      socket.on('chat message', msg => onChatMsg({
+    if (!socket._callbacks['$chat message'] || socket._callbacks['$chat message'].length < 1) {
+      socket.on('chat message', msg =>
+        onChatMsg({
           receivedData,
           firstname,
           lastname,
           msg,
-        }),);
+        })
+      );
     }
   }
 };
 
-const Entry = (props) => {
+const Entry = props => {
   const inputEl = useRef(null);
 
   return (
@@ -48,18 +45,13 @@ const Entry = (props) => {
         type="text"
         onChange={e => handleChange(e, props)}
         onKeyPress={e => handleKeyPress(e, props, inputEl)}
-        placeholder="type your message"
-      />
-      <i
-        className="fas fa-backspace custom"
-        onClick={() => clearInput(inputEl)}
-      />
-      <Button className="button" input={inputEl} socket={props.socket} />
+        placeholder="type your message" />
+      <i className="fas fa-backspace custom" onClick={() => clearInput(inputEl)} />
+      <Button
+        className="button" input={inputEl}
+        socket={props.socket} />
     </div>
   );
 };
 
-export default connect(
-  state => state,
-  actions,
-)(Entry);
+export default connect(state => state, actions)(Entry);
