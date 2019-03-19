@@ -11,7 +11,7 @@ A demo implementation of a chat room that is using websockets protocol with sock
 
 - [ ] Authentication / Registration
 - [ ] Sessions
-- [ ] Tests
+- [ ] Tests -- puppeteer
 - [ ] Deploy to server
 - [ ] Automation / CI--> Add Circle CI
 - [ ] Attach files / images etc
