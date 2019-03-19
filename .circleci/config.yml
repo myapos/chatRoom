@@ -2,28 +2,15 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:latest-browsers
+      - image: circleci/node:10-browsers-legacy
     steps:
       - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-      - run:
-          name: Workaround for GoogleChrome/puppeteer#290
-          command: 'sh .circleci/setup_puppeteer.sh'
       - run: echo "Installing node packages"
       - run: yarn
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn build
   test:
     docker:
-      - image: circleci/node:latest-browsers
+      - image: circleci/node:10-browsers-legacy
     steps:
       - checkout
       - run: echo "Installing node packages"
