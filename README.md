@@ -24,7 +24,6 @@ Here is a chart of how the package is set up:
 
 ### TODOS
 
-- [ ] Authentication / Registration
 - [ ] Sessions
 - [ ] Tests -- puppeteer
   - [x] Setup
