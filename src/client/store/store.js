@@ -10,7 +10,7 @@ function configureStore (initialState) {
     rootReducer,
     initialState,
     compose(
-      window.devToolsExtension ? window.devToolsExtension() : f => f)
+      typeof window !== 'undefined' && window.devToolsExtension ? window.devToolsExtension() : f => f)
   );
 
   // sagaMiddleware.run(rootSaga);
