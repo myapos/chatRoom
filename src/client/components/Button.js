@@ -7,18 +7,31 @@ import clearInput from '../utils/clearInput';
 
 class Button extends Component {
   componentDidMount () {
-    const { socket, receivedData, firstname, lastname } = this.props;
+    const { socket, receivedData } = this.props;
     // check socket callbacks to avoid multiple listeners and memory leaks
 
     if (!socket._callbacks['$chat message'] || socket._callbacks['$chat message'].length < 1) {
       socket.on('chat message', msg =>
         onChatMsg({
           receivedData,
-          firstname,
-          lastname,
           msg,
         })
       );
+    }
+
+    // check if there are any valus in localStore
+
+    const stored = localStorage.getItem('received');
+
+    const hasPreviousReceived = JSON.parse(stored);
+
+    if (hasPreviousReceived.length) {
+      // debugger;
+      console.log(hasPreviousReceived);
+      onChatMsg({
+        receivedData,
+        hasPreviousReceived,
+      });
     }
   }
 

@@ -1,5 +1,4 @@
 const initialState = {
-  'testState': 'test',
   received: [],
   entered: '',
   firstname: '',

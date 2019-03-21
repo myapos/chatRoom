@@ -28,11 +28,13 @@ Here is a chart of how the package is set up:
 
 ### TODOS
 
+- [ ] Keep messages on refresh
+- [x] Keep login status on refresh
 - [ ] Sessions
 - [x] Add validation
 - [x] Tests -- puppeteer
   - [x] Setup
-  - [ ] Add tests
+  - [x] Add tests
 - [ ] Deploy to server
 - [x] Automation / CI--> Add Circle CI
-- [ ] Attach files / images etc
+- [ ] Attach files / images etc --> this may not be implemented
