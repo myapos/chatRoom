@@ -22,16 +22,16 @@ class Button extends Component {
     // check if there are any valus in localStore
 
     const stored = localStorage.getItem('received');
+    const firstname = localStorage.getItem('firstname');
+    const lastname = localStorage.getItem('lastname');
 
     const hasPreviousReceived = JSON.parse(stored);
-
     if (hasPreviousReceived.length) {
-      // debugger;
       console.log(hasPreviousReceived);
-      onChatMsg({
-        receivedData,
-        hasPreviousReceived,
-      });
+
+      this.props.setUserInfo(firstname, lastname);
+
+      this.props.setPreviousData(hasPreviousReceived);
     }
   }
 
@@ -52,6 +52,7 @@ class Button extends Component {
 
 Button.propTypes = {
   receivedData: PropTypes.func,
+  setUserInfo: PropTypes.func,
   data: PropTypes.string,
   lastname: PropTypes.string,
   input: PropTypes.object,

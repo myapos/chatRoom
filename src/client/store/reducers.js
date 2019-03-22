@@ -1,7 +1,7 @@
 import * as actions from './actions';
 
 const reducer = (state = {}, action) => {
-  const { type, data, meta, firstname, lastname } = action;
+  const { type, data, meta, firstname, lastname, previousData } = action;
 
   switch (type) {
     case actions.INITIALIZATION:
@@ -17,17 +17,12 @@ const reducer = (state = {}, action) => {
     case actions.RECEIVED_DATA:
       state.received.push(meta);
 
-      debugger;
-
-      let newValues;
-      if (typeof state.received.length === 'undefined') {
-        // eslint-disable-next-line no-case-declarations
-        newValues = [...state.received];
-      } else {
-        newValues = state.received;
-      }
+      const newValues = [...state.received];
 
       localStorage.setItem('received', JSON.stringify(newValues));
+      localStorage.setItem('firstname', state.firstname);
+      localStorage.setItem('lastname', state.lastname);
+
       return {
         ...state,
         received: newValues,
@@ -48,6 +43,8 @@ const reducer = (state = {}, action) => {
     case actions.EXIT:
 
       localStorage.setItem('received', '[]');
+      localStorage.setItem('firstname', '');
+      localStorage.setItem('lastname', '');
       localStorage.setItem('entered', 'false');
 
       return {
@@ -56,6 +53,21 @@ const reducer = (state = {}, action) => {
         entered: '',
         firstname: '',
         lastname: '',
+      };
+
+    case actions.SET_USER_INFO:
+
+      return {
+        ...state,
+        firstname,
+        lastname,
+      };
+
+    case actions.SET_PREVIOUS_DATA:
+
+      return {
+        ...state,
+        received: previousData,
       };
 
     default:

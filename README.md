@@ -28,7 +28,7 @@ Here is a chart of how the package is set up:
 
 ### TODOS
 
-- [ ] Keep messages on refresh
+- [x] Keep messages on refresh
 - [x] Keep login status on refresh
 - [ ] Sessions
 - [x] Add validation
