@@ -1,5 +1,5 @@
 #!/bin/bash
 
-yarn start &
+yarn client &
 
 yarn server
