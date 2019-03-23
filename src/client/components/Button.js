@@ -19,7 +19,7 @@ class Button extends Component {
       );
     }
 
-    // check if there are any valus in localStore
+    // check if there are any values in localStore
 
     const stored = localStorage.getItem('received');
     const firstname = localStorage.getItem('firstname');
