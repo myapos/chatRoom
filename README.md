@@ -30,7 +30,6 @@ Here is a chart of how the package is set up:
 
 - [x] Keep messages on refresh
 - [x] Keep login status on refresh
-- [ ] Sessions
 - [x] Add validation
 - [x] Tests -- puppeteer
   - [x] Setup
@@ -38,3 +37,7 @@ Here is a chart of how the package is set up:
 - [ ] Deploy to server
 - [x] Automation / CI--> Add Circle CI
 - [ ] Attach files / images etc --> this may not be implemented
+
+# NOTES
+
+- To start client and server with single command: `https://kb.iu.edu/d/afnz`
