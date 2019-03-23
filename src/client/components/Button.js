@@ -26,7 +26,7 @@ class Button extends Component {
     const lastname = localStorage.getItem('lastname');
 
     const hasPreviousReceived = JSON.parse(stored);
-    if (hasPreviousReceived.length) {
+    if (hasPreviousReceived && hasPreviousReceived.length) {
       console.log(hasPreviousReceived);
 
       this.props.setUserInfo(firstname, lastname);
