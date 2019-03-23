@@ -19,5 +19,6 @@ module.exports = async function () {
   global.__BROWSER_GLOBAL__ = browser;
   // Instead, we expose the connection details via file system to be used in tests
   mkdirp.sync(DIR);
+
   fs.writeFileSync(path.join(DIR, 'wsEndpoint'), browser.wsEndpoint());
 };
