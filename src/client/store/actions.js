@@ -7,6 +7,10 @@ export const ENTER = 'ENTER';
 
 export const EXIT = 'EXIT';
 
+export const SET_USER_INFO = 'SET_USER_INFO';
+
+export const SET_PREVIOUS_DATA = 'SET_PREVIOUS_DATA';
+
 export const entryChange = data => ({
   type: ENTRY,
   data,
@@ -25,4 +29,15 @@ export const enter = (firstname, lastname) => ({
 
 export const exit = () => ({
   type: EXIT,
+});
+
+export const setUserInfo = (firstname, lastname) => ({
+  type: SET_USER_INFO,
+  firstname,
+  lastname,
+});
+
+export const setPreviousData = previousData => ({
+  type: SET_PREVIOUS_DATA,
+  previousData,
 });

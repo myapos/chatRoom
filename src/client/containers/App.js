@@ -15,17 +15,24 @@ const socket = openSocket(`http://localhost:${SERVER_PORT}`);
 
 // https://medium.com/dailyjs/combining-react-with-socket-io-for-real-time-goodness-d26168429a34
 
-const App = props =>
-  <div className="wrapper">
+const App = props => {
+  const { entered } = props;
+
+  // get value from storage
+
+  const storedEnter = localStorage.getItem('entered');
+
+  return (<div className="wrapper">
     {
-      props.entered
+      entered || storedEnter === 'true'
         ? <React.Fragment>
           <Display socket={socket} />
           <Entry socket={socket} />
         </React.Fragment>
         : <Enter />
     }
-  </div>;
+  </div>);
+};
 
 App.propTypes = {
   entered: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),

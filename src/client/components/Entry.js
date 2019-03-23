@@ -26,8 +26,6 @@ const handleKeyPress = (e, props, inputEl) => {
       socket.on('chat message', msg =>
         onChatMsg({
           receivedData,
-          firstname,
-          lastname,
           msg,
         })
       );
