@@ -36,7 +36,7 @@ Here is a chart of how the package is set up:
   - [x] Add tests
 - [ ] Deploy to server
 - [x] Automation / CI--> Add Circle CI
-- [ ] Attach files / images etc --> this may not be implemented
+- [ ] Attach files / images etc --> this may not be implemented 
 
 # NOTES
 
