@@ -12,6 +12,8 @@ app.get('/', (req, res) => {
   res.sendFile(path.join() + '/staticFiles/index.html');
 });
 
+app.get('/health', (req, res) => res.send('OK!'));
+
 io_.on('connection', socket => {
   socket.on('chat message', msg => {
     console.log('message: ' + msg);
