@@ -1,5 +1,3 @@
 #!/bin/bash
 
-yarn client &
-
-yarn server
+yarn client & yarn server
