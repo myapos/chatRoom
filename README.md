@@ -42,3 +42,4 @@ Here is a chart of how the package is set up:
 # NOTES
 
 - To start client and server with single command: `https://kb.iu.edu/d/afnz`
+- Online Demo: `https://chatroomsimpledemo.herokuapp.com/`
