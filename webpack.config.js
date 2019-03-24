@@ -1,7 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
+const { CLIENT_PORT } = require('./constants/common');
 
-const PORT = 1234;
+// const { CLIENT_PORT } = common;
+// console.log('CLIENT_PORT', CLIENT_PORT);
+
+// const PORT = 1234;
 
 const config = {
   entry: {
@@ -10,7 +14,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: `http://localhost:${PORT}/dist/`,
+    publicPath: `http://localhost:${CLIENT_PORT}/dist/`,
   },
   resolve: {
     alias: {
@@ -60,8 +64,8 @@ const config = {
     overlay: true,
     noInfo: false,
     compress: true,
-    port: PORT,
-    publicPath: `http://localhost:${PORT}/dist/`,
+    port: CLIENT_PORT,
+    publicPath: `http://localhost:${CLIENT_PORT}/dist/`,
     disableHostCheck: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
   },
