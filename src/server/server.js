@@ -5,6 +5,8 @@ import path from 'path';
 import { SERVER_PORT } from '../../constants/common';
 // import common from '../../constants/common';
 
+// console.log('path:', path.dirname);
+
 const app = express();
 const http_ = http.Server(app);
 const io_ = io(http_);
@@ -14,6 +16,11 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
   // res.send('OK!');
   res.sendfile(__dirname + '/public/index.html');
+});
+
+app.get('/bundle', (req, res) => {
+  // res.send('OK!');
+  res.sendfile('./dist/bundle.js');
 });
 
 app.get('/health', (req, res) => res.send('OK!'));
