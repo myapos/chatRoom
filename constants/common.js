@@ -10,6 +10,6 @@ console.log('port from common', process.env.PORT);
 common.CLIENT_PORT = process.env.NODE_ENV === 'development' ? 1234 : 2222;
 common.SERVER_PORT = process.env.PORT || 3000;
 common.BASE_URL = process.env.NODE_ENV === 'development'
-  ? 'http://localhost' : 'https://chatroomsimpledemo.herokuapp.com/';
+  ? 'http://localhost' : 'https://boiling-retreat-31286.herokuapp.com';
 
 module.exports = common;

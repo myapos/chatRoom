@@ -13,7 +13,12 @@ import { SERVER_PORT } from '../../../constants/common';
 
 console.log('SERVER_PORT from client', SERVER_PORT);
 
-const socket = openSocket(`http://localhost:${SERVER_PORT}`);
+let socket = {};
+if (process.env.NODE_ENV === 'development') {
+  socket = openSocket(`http://localhost:${SERVER_PORT}`);
+} else {
+  socket = openSocket('https://boiling-retreat-31286.herokuapp.com');
+}
 
 // https://medium.com/dailyjs/combining-react-with-socket-io-for-real-time-goodness-d26168429a34
 
