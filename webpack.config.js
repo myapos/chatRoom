@@ -14,7 +14,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: `BASE_URL:${CLIENT_PORT}/dist/`,
+    publicPath: `${BASE_URL}:${CLIENT_PORT}/dist/`,
   },
   resolve: {
     alias: {
@@ -65,7 +65,7 @@ const config = {
     noInfo: false,
     compress: true,
     port: CLIENT_PORT,
-    publicPath: `BASE_URL:${CLIENT_PORT}/dist/`,
+    publicPath: `${BASE_URL}:${CLIENT_PORT}/dist/`,
     disableHostCheck: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
   },
