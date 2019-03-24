@@ -11,6 +11,8 @@ import '../css/css.styl';
 import '../css/fontawesome-free-5.7.2-web/css/all.css';
 import { SERVER_PORT } from '../../../constants/common';
 
+console.log('SERVER_PORT from client', SERVER_PORT);
+
 const socket = openSocket(`http://localhost:${SERVER_PORT}`);
 
 // https://medium.com/dailyjs/combining-react-with-socket-io-for-real-time-goodness-d26168429a34

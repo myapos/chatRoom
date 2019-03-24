@@ -6,9 +6,9 @@
 
 const common = {};
 
-common.CLIENT_PORT = process.env.PORT ? 2222 : 1234;
-common.SERVER_PORT = process.env.PORT ? 5000 : 3000;
-common.BASE_URL = process.env.PORT
+common.CLIENT_PORT = process.env.PRODUCTION ? 2222 : 1234;
+common.SERVER_PORT = process.env.PRODUCTION ? 5000 : 3000;
+common.BASE_URL = process.env.PRODUCTION
   ? 'https://chatroomsimpledemo.herokuapp.com/' : 'http://localhost';
 
 module.exports = common;

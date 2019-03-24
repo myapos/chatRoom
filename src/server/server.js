@@ -3,6 +3,7 @@ import http from 'http';
 import io from 'socket.io';
 import path from 'path';
 import { SERVER_PORT } from '../../constants/common';
+// import common from '../../constants/common';
 
 const app = express();
 const http_ = http.Server(app);
@@ -22,6 +23,9 @@ io_.on('connection', socket => {
 });
 
 io_.emit('some event', { for: 'everyone' });
+
+console.log('SERVER_PORT', SERVER_PORT);
+// console.log('common', common);
 
 http_.listen(SERVER_PORT, () => {
   console.log(`listening on http://localhost:${SERVER_PORT}`);

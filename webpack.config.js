@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const { CLIENT_PORT } = require('./constants/common');
+const { CLIENT_PORT, BASE_URL } = require('./constants/common');
 
 // const { CLIENT_PORT } = common;
 // console.log('CLIENT_PORT', CLIENT_PORT);
