@@ -34,8 +34,9 @@ Here is a chart of how the package is set up:
 - [x] Tests -- puppeteer
   - [x] Setup
   - [x] Add tests
-- [ ] Deploy to server
+- [x] Deploy to server
 - [x] Automation / CI--> Add Circle CI
+- [ ] Filter and enable small emoticons
 - [ ] Attach files / images etc --> this may not be implemented
 
 # NOTES
