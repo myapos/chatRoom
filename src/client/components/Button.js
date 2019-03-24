@@ -37,7 +37,7 @@ class Button extends Component {
 
   handleMsg () {
     const { data, socket, firstname, lastname, input } = this.props;
-    socket.emit('chat message', `${firstname} ${lastname}: ${data}`);
+    socket.emit('chat message', `${firstname} ${lastname} ${data}`);
     clearInput(input);
   }
 

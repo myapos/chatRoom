@@ -36,7 +36,8 @@ Here is a chart of how the package is set up:
   - [x] Add tests
 - [x] Deploy to server
 - [x] Automation / CI--> Add Circle CI
-- [ ] Filter and enable small emoticons
+- [x] Filter and enable small emoticons
+- [ ] Add which user is typing info
 - [ ] Attach files / images etc --> this may not be implemented
 
 # NOTES
