@@ -3,7 +3,7 @@ A demo implementation of a chat room that is using websockets protocol with sock
 
 # Commands
 
-- `yarn automate` to start server
+- `yarn server` to start server
 - `yarn startDev` for both client and server. Then visit demo app in `http://localhost:1234/demo/`
 - `yarn build` to build client
 - `yarn visualize` to build graph
