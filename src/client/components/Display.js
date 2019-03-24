@@ -18,7 +18,7 @@ const Display = props => <div className="display">
 
       return (<div className="row" key={meta.timestamp}>
         <div className="whoIsIt">
-          {firstAndLastName}:
+          {firstAndLastName}
         </div>
         {msg}
         <div className="dateAndTimeInfo">
