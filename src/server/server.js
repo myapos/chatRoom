@@ -9,8 +9,11 @@ const app = express();
 const http_ = http.Server(app);
 const io_ = io(http_);
 
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
-  res.sendFile(path.join() + '/staticFiles/index.html');
+  // res.send('OK!');
+  res.sendfile(__dirname + '/public/index.html');
 });
 
 app.get('/health', (req, res) => res.send('OK!'));
