@@ -4,8 +4,6 @@
 // export const BASE_URL = process.env.PORT
 //   ? 'https://chatroomsimpledemo.herokuapp.com/' : 'http://localhost';
 
-// export const dummyMsg = 'test';
-
 const common = {};
 
 common.CLIENT_PORT = process.env.PORT ? 2222 : 1234;
