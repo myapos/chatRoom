@@ -1,7 +1,6 @@
 import express from 'express';
 import http from 'http';
 import io from 'socket.io';
-import path from 'path';
 import { SERVER_PORT } from '../../constants/common';
 // import common from '../../constants/common';
 

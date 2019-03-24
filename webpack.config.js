@@ -74,6 +74,9 @@ const config = {
     new webpack.BannerPlugin({
       banner: `Build: ${new Date().toLocaleString()}`,
     }),
+    new webpack.DefinePlugin({
+      'process.env.PORT': false,
+    }),
   ],
 };
 
