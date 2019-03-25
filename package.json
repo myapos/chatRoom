@@ -12,7 +12,7 @@
 		"startAll_": "./startAll.sh",
 		"startDev": "yarn client & yarn server",
 		"start": "yarn server",
-		"visualize": "depcruise --exclude \"^node_modules|test\" --output-type dot src | dot -T svg > ./graph/dependencygraph.svg",
+		"visualize": "depcruise --exclude \"^node_modules|test|fontawesome\" --output-type dot src | dot -T svg > ./graph/dependencygraph.svg",
 		"lint": "eslint"
 	},
 	"lint-staged": {
@@ -20,7 +20,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "yarn visualize && lint-staged",
+			"pre-commit": "lint-staged",
 			"pre-push": "yarn test"
 		}
 	},
