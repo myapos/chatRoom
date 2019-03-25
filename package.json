@@ -20,8 +20,8 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "lint-staged",
-			"pre-push": "yarn visualize && yarn test"
+			"pre-commit": "yarn visualize && lint-staged",
+			"pre-push": "yarn test"
 		}
 	},
 	"keywords": [
