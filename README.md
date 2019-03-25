@@ -37,10 +37,17 @@ Here is a chart of how the package is set up:
 - [x] Deploy to server
 - [x] Automation / CI--> Add Circle CI
 - [x] Filter and enable small emoticons
-- [ ] Add which user is typing info
+- [ ] Add which user is typing info in a layer
+- [ ] Use it with electron
+- [ ] Add firebase database and a sidebar list of users in chat room
+  - [ ] Model user in DB. User will have firstname, lastname, status (active/away/inactive). Status will be configured through a small pop up from list. Status will be configured only by the matching user that has the permission to do it
+- [ ] Logout after an amount of time where the system is idle
+  - [ ] Detect no key and no mouse interaction
+  - [ ] Detect no focus
 - [ ] Attach files / images etc --> this may not be implemented
 
 # NOTES
 
 - To start client and server with single command: `https://kb.iu.edu/d/afnz`
 - Online Demo: `https://chatroomsimpledemo.herokuapp.com/`
+- `https://www.robinwieruch.de/react-firebase-realtime-database/`
