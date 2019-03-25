@@ -19,7 +19,7 @@ const Enter = props => {
   const inputUserName = useRef(null);
   const inputLastName = useRef(null);
 
-  const { entered } = props;
+  const { entered, isLoggedIn, firstScreen } = props;
 
   return (
     <div className="enter">
@@ -27,6 +27,11 @@ const Enter = props => {
       {
         entered !== ''
           ? <div className="validatedText"> You have to insert firstname or lastname!</div>
+          : null
+      }
+      {
+        !firstScreen && !isLoggedIn
+          ? <div className="validatedText"> Logged out!</div>
           : null
       }
       <div className="inputs">
@@ -52,5 +57,7 @@ const Enter = props => {
 
 Enter.propTypes = {
   entered: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
+  isLoggedIn: PropTypes.bool,
+  firstScreen: PropTypes.bool,
 };
 export default connect(state => state, actions)(Enter);

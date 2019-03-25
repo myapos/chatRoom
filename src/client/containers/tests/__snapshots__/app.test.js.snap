@@ -3,6 +3,8 @@
 exports[`App testing not entered 1`] = `
 <div
   className="wrapper"
+  onClick={[Function]}
+  onFocus={[Function]}
 >
   <div
     className="enter"

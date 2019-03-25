@@ -11,8 +11,15 @@ export const SET_USER_INFO = 'SET_USER_INFO';
 
 export const SET_PREVIOUS_DATA = 'SET_PREVIOUS_DATA';
 
-export const SET_IDLE_TIMER = 'SET_IDLE_TIMER';
-export const RESET_IDLE_TIMER = 'RESET_IDLE_TIMER';
+/* IDLE ACTIONS */
+
+export const SET_IDLE_TICK_TIMER = 'SET_IDLE_TICK_TIMER';
+
+export const SET_IDLE_INTERVAL = 'SET_IDLE_INTERVAL';
+
+export const RESET_IDLE_TICK_TIMER = 'RESET_IDLE_TICK_TIMER';
+
+export const LOGGED_OUT = 'LOGGED_OUT';
 
 export const entryChange = data => ({
   type: ENTRY,
@@ -43,4 +50,22 @@ export const setUserInfo = (firstname, lastname) => ({
 export const setPreviousData = previousData => ({
   type: SET_PREVIOUS_DATA,
   previousData,
+});
+
+export const setIdleTickTimer = tick => ({
+  type: SET_IDLE_TICK_TIMER,
+  tick,
+});
+
+export const setIdleInterval = idleInterval => ({
+  type: SET_IDLE_INTERVAL,
+  idleInterval,
+});
+
+export const resetIdleTickTimer = () => ({
+  type: RESET_IDLE_TICK_TIMER,
+});
+
+export const loggedOut = () => ({
+  type: LOGGED_OUT,
 });

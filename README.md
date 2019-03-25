@@ -41,9 +41,9 @@ Here is a chart of how the package is set up:
 - [ ] Use it with electron
 - [ ] Add firebase database and a sidebar list of users in chat room
   - [ ] Model user in DB. User will have firstname, lastname, status (active/away/inactive). Status will be configured through a small pop up from list. Status will be configured only by the matching user that has the permission to do it
-- [ ] Logout after an amount of time where the system is idle
-  - [ ] Detect no key and no mouse interaction
-  - [ ] Detect no focus
+- [x] Logout after an amount of time where the system is idle
+  - [x] Detect no key and no mouse interaction
+  - [x] Detect no focus
 - [ ] Attach files / images etc --> this may not be implemented
 
 # NOTES

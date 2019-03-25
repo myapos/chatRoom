@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
+
+import PropTypes from 'prop-types';
 import Button from './Button';
 import Exit from './Exit';
 import * as actions from '../store/actions';
@@ -31,6 +33,10 @@ const handleKeyPress = (e, props, inputEl) => {
       );
     }
   }
+
+  // reset tick timer
+
+  props.resetIdleTickTimer();
 };
 
 const Entry = props => {
@@ -55,4 +61,7 @@ const Entry = props => {
   );
 };
 
+Entry.propTypes = {
+  socket: PropTypes.object,
+};
 export default connect(state => state, actions)(Entry);
