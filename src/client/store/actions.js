@@ -11,6 +11,9 @@ export const SET_USER_INFO = 'SET_USER_INFO';
 
 export const SET_PREVIOUS_DATA = 'SET_PREVIOUS_DATA';
 
+export const SET_IDLE_TIMER = 'SET_IDLE_TIMER';
+export const RESET_IDLE_TIMER = 'RESET_IDLE_TIMER';
+
 export const entryChange = data => ({
   type: ENTRY,
   data,

@@ -52,6 +52,7 @@ class Button extends Component {
 
 Button.propTypes = {
   receivedData: PropTypes.func,
+  setPreviousData: PropTypes.func,
   setUserInfo: PropTypes.func,
   data: PropTypes.string,
   lastname: PropTypes.string,

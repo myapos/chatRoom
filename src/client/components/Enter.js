@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions';
-import { isNullOrUndefined } from 'util';
 
 const handleKeyPress = (e, props, inputUserName, inputLastName) => {
   if (e.key.match(/enter/gi)) {
@@ -50,4 +50,7 @@ const Enter = props => {
   );
 };
 
+Enter.propTypes = {
+  entered: PropTypes.oneOfType(['string', 'bool']),
+};
 export default connect(state => state, actions)(Enter);

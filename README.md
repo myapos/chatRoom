@@ -50,4 +50,4 @@ Here is a chart of how the package is set up:
 
 - To start client and server with single command: `https://kb.iu.edu/d/afnz`
 - Online Demo: `https://chatroomsimpledemo.herokuapp.com/`
-- `https://www.robinwieruch.de/react-firebase-realtime-database/`
+- Firebase tutorials: `https://www.robinwieruch.de/react-firebase-realtime-database/`
