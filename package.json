@@ -8,7 +8,7 @@
 		"client": "webpack-dev-server --mode development --hot",
 		"build": "webpack --config webpack.config.production.js",
 		"test": "NODE_ENV=production jest --maxWorkers=2",
-		"testDev": "NODE_ENV=development jest",
+		"testDev": "NODE_ENV=development jest --maxWorkers=2",
 		"startAll_": "./startAll.sh",
 		"startDev": "yarn client & yarn server",
 		"start": "yarn server",

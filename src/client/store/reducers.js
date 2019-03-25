@@ -1,7 +1,7 @@
 import * as actions from './actions';
 
 const reducer = (state = {}, action) => {
-  const { type, data, meta, firstname, lastname, previousData } = action;
+  const { type, data, meta, firstname, lastname, previousData, idleInterval, tick } = action;
 
   switch (type) {
     case actions.INITIALIZATION:
@@ -17,6 +17,7 @@ const reducer = (state = {}, action) => {
     case actions.RECEIVED_DATA:
       state.received.push(meta);
 
+      // eslint-disable-next-line no-case-declarations
       const newValues = [...state.received];
 
       localStorage.setItem('received', JSON.stringify(newValues));
@@ -39,6 +40,8 @@ const reducer = (state = {}, action) => {
         firstname,
         lastname,
         entered: hasEntered,
+        isLoggedIn: true,
+        firstScreen: false,
       };
     case actions.EXIT:
 
@@ -70,6 +73,31 @@ const reducer = (state = {}, action) => {
         received: previousData,
       };
 
+    case actions.SET_IDLE_INTERVAL:
+
+      return {
+        ...state,
+        idleInterval,
+      };
+
+    case actions.SET_IDLE_TICK_TIMER:
+      return {
+        ...state,
+        tick,
+      };
+
+    case actions.RESET_IDLE_TICK_TIMER:
+      return {
+        ...state,
+        tick: 0,
+      };
+
+    case actions.LOGGED_OUT:
+      return {
+        ...state,
+        isLoggedIn: false,
+        firstScreen: false,
+      };
     default:
       return state;
   }

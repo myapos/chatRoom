@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import openSocket from 'socket.io-client';
 import PropTypes from 'prop-types';
@@ -22,26 +22,41 @@ if (process.env.NODE_ENV === 'development') {
 
 // https://medium.com/dailyjs/combining-react-with-socket-io-for-real-time-goodness-d26168429a34
 
-const App = props => {
-  const { entered } = props;
+class App extends Component {
+  componentDidMount () {
+    console.log('');
+    const { entered, resetIdleTickTimer } = this.props;
+    typeof document !== 'undefined'
+      && document.body.addEventListener('mouseover', () => {
+        resetIdleTickTimer();
+      });
+  }
 
-  // get value from storage
+  render () {
+    const { entered, resetIdleTickTimer } = this.props;
 
-  const storedEnter = localStorage.getItem('entered');
+    // get value from storage
 
-  return (<div className="wrapper">
-    {
-      entered || storedEnter === 'true'
-        ? <React.Fragment>
-          <Display socket={socket} />
-          <Entry socket={socket} />
-        </React.Fragment>
-        : <Enter />
-    }
-  </div>);
-};
+    const storedEnter = localStorage.getItem('entered');
+
+    return (<div
+      onClick={() => resetIdleTickTimer()}
+      onFocus={() => resetIdleTickTimer()}
+      className="wrapper" >
+      {
+        entered || storedEnter === 'true'
+          ? <React.Fragment>
+            <Display socket={socket} />
+            <Entry socket={socket} />
+          </React.Fragment>
+          : <Enter />
+      }
+    </div >);
+  }
+}
 
 App.propTypes = {
   entered: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  resetIdleTickTimer: PropTypes.func,
 };
 export default connect(state => state, actions)(App);
