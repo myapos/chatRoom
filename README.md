@@ -37,7 +37,7 @@ Here is a chart of how the package is set up:
 - [x] Deploy to server
 - [x] Automation / CI--> Add Circle CI
 - [x] Filter and enable small emoticons
-- [ ] Add which user is typing info in a layer
+- [x] Add which user is typing info in a layer
 - [ ] Use it with electron
 - [ ] Add firebase database and a sidebar list of users in chat room
   - [ ] Model user in DB. User will have firstname, lastname, status (active/away/inactive). Status will be configured through a small pop up from list. Status will be configured only by the matching user that has the permission to do it
