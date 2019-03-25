@@ -27,8 +27,6 @@ class Button extends Component {
 
     const hasPreviousReceived = JSON.parse(stored);
     if (hasPreviousReceived && hasPreviousReceived.length) {
-      console.log(hasPreviousReceived);
-
       this.props.setUserInfo(firstname, lastname);
 
       this.props.setPreviousData(hasPreviousReceived);
@@ -36,9 +34,11 @@ class Button extends Component {
   }
 
   handleMsg () {
-    const { data, socket, firstname, lastname, input } = this.props;
+    const { data, socket, firstname, lastname, input, whoIsTyping } = this.props;
     socket.emit('chat message', `${firstname} ${lastname} ${data}`);
     clearInput(input);
+    // reset is typing
+    socket.emit('is typing', '');
   }
 
   render () {

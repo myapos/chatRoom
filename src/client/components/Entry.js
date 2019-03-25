@@ -16,11 +16,16 @@ const handleChange = (e, props) => {
 };
 
 const handleKeyPress = (e, props, inputEl) => {
+  const { socket, firstname, lastname } = props;
+
+  // is typing
+  socket.emit('is typing', `${firstname} ${lastname}`);
+
   if (e.key.match(/enter/gi)) {
     console.log('pressed enter');
 
-    const { data, socket, receivedData, firstname, lastname } = props;
-    socket.emit('chat message', `${firstname} ${lastname}: ${data}`);
+    const { data, receivedData } = props;
+    socket.emit('chat message', `${firstname} ${lastname} ${data}`);
     clearInput(inputEl);
     // check socket callbacks to avoid multiple listeners and memory leaks
 
@@ -32,6 +37,9 @@ const handleKeyPress = (e, props, inputEl) => {
         })
       );
     }
+
+    // reset is typing
+    socket.emit('is typing', '');
   }
 
   // reset tick timer
@@ -63,5 +71,6 @@ const Entry = props => {
 
 Entry.propTypes = {
   socket: PropTypes.object,
+  whoIsTyping: PropTypes.func,
 };
 export default connect(state => state, actions)(Entry);

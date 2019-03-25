@@ -7,6 +7,7 @@ const initialState = {
   tick: 0,
   isLoggedIn: false,
   firstScreen: true,
+  who: '',
 };
 
 export default initialState;
