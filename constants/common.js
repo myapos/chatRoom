@@ -12,7 +12,7 @@ common.SERVER_PORT = process.env.PORT || 3000;
 common.BASE_URL = process.env.NODE_ENV === 'development'
   ? 'http://localhost' : 'https://chatroomsimpledemo.herokuapp.com';
 
-common.idleThreshold = 300000;
+common.idleThreshold = 600000; // log out after 10 minutes
 common.idleStep = 1000;
 common.idleInterval = 'idleInterval';
 
