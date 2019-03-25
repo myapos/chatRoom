@@ -39,9 +39,14 @@ io_.on('connection', socket => {
     console.log('message: ' + msg);
     io_.emit('chat message', msg);
   });
+
+  socket.on('is typing', who => {
+    // console.log('who: ' + who);
+    io_.emit('is typing', who);
+  });
 });
 
-io_.emit('some event', { for: 'everyone' });
+// io_.emit('some event', { for: 'everyone' });
 
 console.log('SERVER_PORT', SERVER_PORT);
 // console.log('common', common);

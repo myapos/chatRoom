@@ -11,6 +11,8 @@ export const SET_USER_INFO = 'SET_USER_INFO';
 
 export const SET_PREVIOUS_DATA = 'SET_PREVIOUS_DATA';
 
+export const WHO_IS_TYPING = 'WHO_IS_TYPING';
+
 /* IDLE ACTIONS */
 
 export const SET_IDLE_TICK_TIMER = 'SET_IDLE_TICK_TIMER';
@@ -68,4 +70,9 @@ export const resetIdleTickTimer = () => ({
 
 export const loggedOut = () => ({
   type: LOGGED_OUT,
+});
+
+export const whoIsTyping = who => ({
+  type: WHO_IS_TYPING,
+  who,
 });

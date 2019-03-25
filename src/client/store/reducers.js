@@ -1,7 +1,8 @@
 import * as actions from './actions';
 
 const reducer = (state = {}, action) => {
-  const { type, data, meta, firstname, lastname, previousData, idleInterval, tick } = action;
+  const { type, data, meta, firstname, lastname,
+    previousData, idleInterval, tick, who } = action;
 
   switch (type) {
     case actions.INITIALIZATION:
@@ -97,6 +98,12 @@ const reducer = (state = {}, action) => {
         ...state,
         isLoggedIn: false,
         firstScreen: false,
+      };
+
+    case actions.WHO_IS_TYPING:
+      return {
+        ...state,
+        who,
       };
     default:
       return state;

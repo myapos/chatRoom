@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Display from '../components/Display';
 import Entry from '../components/Entry';
 import Enter from '../components/Enter';
+import WhoIsTyping from '../components/WhoIsTyping';
 import * as actions from '../store/actions';
 
 import '../css/css.styl';
@@ -25,11 +26,16 @@ if (process.env.NODE_ENV === 'development') {
 class App extends Component {
   componentDidMount () {
     console.log('');
-    const { entered, resetIdleTickTimer } = this.props;
+    const { resetIdleTickTimer, whoIsTyping } = this.props;
     typeof document !== 'undefined'
       && document.body.addEventListener('mouseover', () => {
         resetIdleTickTimer();
       });
+    if (!socket._callbacks['$is typing'] || socket._callbacks['$is typing'].length < 1) {
+      socket.on('is typing', who => {
+        whoIsTyping(who);
+      });
+    }
   }
 
   render () {
@@ -47,6 +53,7 @@ class App extends Component {
         entered || storedEnter === 'true'
           ? <React.Fragment>
             <Display socket={socket} />
+            <WhoIsTyping />
             <Entry socket={socket} />
           </React.Fragment>
           : <Enter />
@@ -58,5 +65,6 @@ class App extends Component {
 App.propTypes = {
   entered: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   resetIdleTickTimer: PropTypes.func,
+  whoIsTyping: PropTypes.func,
 };
 export default connect(state => state, actions)(App);
