@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
   res.sendfile(__dirname + '/public/index.html');
 });
 
+app.get('/favicon.ico', (req, res) => {
+  res.sendfile('./favicon.ico');
+});
+
 // app.get('/bundle', (req, res) => {
 // res.send('OK!');
 //   res.sendfile('./dist/bundle.js');
@@ -25,7 +29,6 @@ app.get('/', (req, res) => {
 app.get('/dist/*', (req, res) => {
   // console.log('got request for dist', req);
   // console.log('**************************************************************');
-  // // res.send('OK!');
   res.sendfile(`.${req.path}`);
 });
 
