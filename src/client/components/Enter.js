@@ -51,6 +51,6 @@ const Enter = props => {
 };
 
 Enter.propTypes = {
-  entered: PropTypes.oneOfType(['string', 'bool']),
+  entered: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 };
 export default connect(state => state, actions)(Enter);
