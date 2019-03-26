@@ -18,6 +18,7 @@ Here is a chart of how the package is set up:
 
 - yarn
 - Try `yarn visualize`. If it fails install system dependency `sudo apt install graphviz` and try again.
+- Create graph folder in `./graph` path
 - dependencygraph.svg is generated in ./graph folder
 
 ![Graph](./graph/dependencygraph.svg)
