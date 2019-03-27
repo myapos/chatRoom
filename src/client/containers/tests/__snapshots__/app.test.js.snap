@@ -2,39 +2,156 @@
 
 exports[`App testing not entered 1`] = `
 <div
-  className="wrapper"
-  onClick={[Function]}
-  onFocus={[Function]}
+  className="bigWrapper"
 >
   <div
-    className="enter"
+    className="wrapper"
+    onClick={[Function]}
+    onFocus={[Function]}
   >
     <div
-      className="introText"
+      className="enter"
     >
-       Please enter your Name and hit enter!
+      <div
+        className="introText"
+      >
+         Please enter your Name and hit enter!
+      </div>
+      <div
+        className="inputs"
+      >
+        <input
+          className="holder"
+          onKeyPress={[Function]}
+          placeholder="name"
+          type="text"
+        />
+        <input
+          className="holder"
+          onKeyPress={[Function]}
+          placeholder="lastname"
+          type="text"
+        />
+      </div>
+      <div
+        className="myBtn clearFloat"
+        onClick={[Function]}
+      >
+        Enter
+      </div>
+    </div>
+  </div>
+  <div
+    className="listOfUsersWrapper"
+  >
+    <div
+      className="header"
+    >
+      list of users
     </div>
     <div
-      className="inputs"
+      className="listOfUsers"
     >
-      <input
-        className="holder"
-        onKeyPress={[Function]}
-        placeholder="name"
-        type="text"
-      />
-      <input
-        className="holder"
-        onKeyPress={[Function]}
-        placeholder="lastname"
-        type="text"
-      />
-    </div>
-    <div
-      className="myBtn clearFloat"
-      onClick={[Function]}
-    >
-      Enter
+      <div
+        className="userRow"
+      >
+        <div
+          className="user status"
+        >
+           
+          active
+           
+        </div>
+        <div
+          className="user"
+        >
+           
+          myros
+           
+        </div>
+        <div
+          className="user"
+        >
+           
+          apostolakis
+           
+        </div>
+      </div>
+      <div
+        className="userRow"
+      >
+        <div
+          className="user status"
+        >
+           
+          inactive
+           
+        </div>
+        <div
+          className="user"
+        >
+           
+          m1
+           
+        </div>
+        <div
+          className="user"
+        >
+           
+          m1
+           
+        </div>
+      </div>
+      <div
+        className="userRow"
+      >
+        <div
+          className="user status"
+        >
+           
+          away
+           
+        </div>
+        <div
+          className="user"
+        >
+           
+          m2
+           
+        </div>
+        <div
+          className="user"
+        >
+           
+          m2
+           
+        </div>
+      </div>
+      <div
+        className="userRow"
+      >
+        <div
+          className="user status"
+        >
+           
+          active
+           
+        </div>
+        <div
+          className="user"
+        >
+           
+          m3
+           
+        </div>
+        <div
+          className="user"
+        >
+           
+          m3
+           
+        </div>
+      </div>
     </div>
   </div>
 </div>

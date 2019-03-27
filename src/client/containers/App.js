@@ -6,6 +6,7 @@ import Display from '../components/Display';
 import Entry from '../components/Entry';
 import Enter from '../components/Enter';
 import WhoIsTyping from '../components/WhoIsTyping';
+import ListOfUsers from '../components/ListOfUsers';
 import * as actions from '../store/actions';
 
 import '../css/css.styl';
@@ -45,20 +46,52 @@ class App extends Component {
 
     const storedEnter = localStorage.getItem('entered');
 
-    return (<div
-      onClick={() => resetIdleTickTimer()}
-      onFocus={() => resetIdleTickTimer()}
-      className="wrapper" >
+    const users = [
       {
-        entered || storedEnter === 'true'
-          ? <React.Fragment>
-            <Display socket={socket} />
-            <WhoIsTyping />
-            <Entry socket={socket} />
-          </React.Fragment>
-          : <Enter />
-      }
-    </div >);
+        id: 1,
+        firstname: 'myros',
+        lastname: 'apostolakis',
+        status: 'active',
+      },
+      {
+        id: 2,
+        firstname: 'm1',
+        lastname: 'm1',
+        status: 'inactive',
+      },
+      {
+        id: 3,
+        firstname: 'm2',
+        lastname: 'm2',
+        status: 'away',
+      },
+      {
+        id: 4,
+        firstname: 'm3',
+        lastname: 'm3',
+        status: 'active',
+      },
+    ];
+
+    return (
+      <div className="bigWrapper" >
+        <div
+          onClick={() => resetIdleTickTimer()}
+          onFocus={() => resetIdleTickTimer()}
+          className="wrapper" >
+          {
+            entered || storedEnter === 'true'
+              ? <React.Fragment>
+                <Display socket={socket} />
+                <WhoIsTyping />
+                <Entry socket={socket} />
+              </React.Fragment>
+              : <Enter />
+          }
+        </div>
+        <ListOfUsers listOfUsers={users} />
+      </div>
+    );
   }
 }
 
