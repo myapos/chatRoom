@@ -46,33 +46,6 @@ class App extends Component {
 
     const storedEnter = localStorage.getItem('entered');
 
-    const users = [
-      {
-        id: 1,
-        firstname: 'myros',
-        lastname: 'apostolakis',
-        status: 'active',
-      },
-      {
-        id: 2,
-        firstname: 'm1',
-        lastname: 'm1',
-        status: 'inactive',
-      },
-      {
-        id: 3,
-        firstname: 'm2',
-        lastname: 'm2',
-        status: 'away',
-      },
-      {
-        id: 4,
-        firstname: 'm3',
-        lastname: 'm3',
-        status: 'active',
-      },
-    ];
-
     return (
       <div className="bigWrapper" >
         <div
@@ -89,7 +62,12 @@ class App extends Component {
               : <Enter />
           }
         </div>
-        <ListOfUsers listOfUsers={users} />
+        {
+          entered || storedEnter === 'true'
+            ? <ListOfUsers />
+            : null
+        }
+
       </div>
     );
   }
