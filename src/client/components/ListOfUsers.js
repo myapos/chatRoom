@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import Loader from 'react-loader-spinner';
 import PropTypes from 'prop-types';
 import actions from '../store/actions';
 import '../css/bootstrap.min.css';
@@ -56,7 +57,13 @@ class ListOfUsers extends Component {
               Last Name
             </TableHeaderColumn>
           </BootstrapTable>
-        ) : null}
+        ) : <div className="spinner">
+          <Loader
+            type="ThreeDots"
+            color="darkgray"
+            height="50"
+            width="50" />
+        </div> }
       </div>
     );
   }
