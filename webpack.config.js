@@ -7,7 +7,6 @@ const { CLIENT_PORT, BASE_URL } = require('./constants/common');
 
 // const PORT = 1234;
 
-console.log('dfvdfgds', process.env.AUTHDOMAIN);
 const config = {
   entry: {
     main: './src/client/index.js',
