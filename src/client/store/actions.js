@@ -29,6 +29,8 @@ export const LOGGED_OUT = 'LOGGED_OUT';
 
 export const REF_DB = 'REF_DB';
 
+export const LOGGED_USERS = 'LOGGED_USERS';
+
 export const entryChange = data => ({
   type: ENTRY,
   data,

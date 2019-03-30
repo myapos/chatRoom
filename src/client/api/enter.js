@@ -9,7 +9,7 @@ const app = firebase.initializeApp({
   messagingSenderId: '327710006605',
 });
 
-const enter = action => {
+const enter = async action => {
   let ref,
     usersRef,
     newEntry = {};

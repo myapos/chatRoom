@@ -32,7 +32,7 @@ const ListOfUsers = () => {
     },
   ];
 
-  console.log('listOfUsers', listOfUsers);
+  // console.log('listOfUsers', listOfUsers);
 
   const options = {
     defaultSortName: 'name',
@@ -40,28 +40,22 @@ const ListOfUsers = () => {
 
   return (
     <div className="listOfUsersWrapper">
-      <div className="header">
-        Logged in users
-      </div>
+      <div className="header">Logged in users</div>
       <BootstrapTable
         data={listOfUsers}
         striped
         hover
         condensed
         options={options}>
-        <TableHeaderColumn
-          dataField="id"
-          dataSort
-          hidden
-          isKey>ID
+        <TableHeaderColumn dataField="id" dataSort
+hidden isKey>
+          ID
         </TableHeaderColumn>
-        <TableHeaderColumn
-          dataField="firstname"
-          dataSort>First Name
+        <TableHeaderColumn dataField="firstname" dataSort>
+          First Name
         </TableHeaderColumn>
-        <TableHeaderColumn
-          dataField="lastname"
-          dataSort>Last Price
+        <TableHeaderColumn dataField="lastname" dataSort>
+          Last Price
         </TableHeaderColumn>
       </BootstrapTable>
     </div>
