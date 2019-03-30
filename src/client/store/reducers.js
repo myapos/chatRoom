@@ -1,8 +1,20 @@
 import * as actions from './actions';
 
 const reducer = (state = {}, action) => {
-  const { type, data, meta, firstname, lastname,
-    previousData, idleInterval, tick, who } = action;
+  const {
+    type,
+    data,
+    meta,
+    firstname,
+    lastname,
+    previousData,
+    idleInterval,
+    tick,
+    who,
+    ref,
+    usersRef,
+    newEntry,
+  } = action;
 
   switch (type) {
     case actions.INITIALIZATION:
@@ -31,7 +43,6 @@ const reducer = (state = {}, action) => {
       };
 
     case actions.ENTER:
-
       // eslint-disable-next-line no-case-declarations
       const hasEntered = firstname !== '' || lastname !== '';
       localStorage.setItem('entered', hasEntered);
@@ -45,7 +56,6 @@ const reducer = (state = {}, action) => {
         firstScreen: false,
       };
     case actions.EXIT:
-
       localStorage.setItem('received', '[]');
       localStorage.setItem('firstname', '');
       localStorage.setItem('lastname', '');
@@ -55,12 +65,16 @@ const reducer = (state = {}, action) => {
         ...state,
         received: [],
         entered: '',
+      };
+
+    case actions.SAGAS_EXIT:
+      return {
+        ...state,
         firstname: '',
         lastname: '',
       };
 
     case actions.SET_USER_INFO:
-
       return {
         ...state,
         firstname,
@@ -68,14 +82,12 @@ const reducer = (state = {}, action) => {
       };
 
     case actions.SET_PREVIOUS_DATA:
-
       return {
         ...state,
         received: previousData,
       };
 
     case actions.SET_IDLE_INTERVAL:
-
       return {
         ...state,
         idleInterval,
@@ -105,6 +117,15 @@ const reducer = (state = {}, action) => {
         ...state,
         who,
       };
+
+    case actions.REF_DB:
+      return {
+        ...state,
+        ref,
+        usersRef,
+        newEntry,
+      };
+
     default:
       return state;
   }

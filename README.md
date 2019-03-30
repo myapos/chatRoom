@@ -1,4 +1,5 @@
 # Chat Room Demo
+
 A demo implementation of a chat room that is using websockets protocol with socket.io, React and Redux
 
 # Commands
@@ -43,6 +44,9 @@ Here is a chart of how the package is set up:
 - [ ] Storybook
 - [ ] Add firebase database and a sidebar list of users in chat room
   - [ ] Model user in DB. User will have firstname, lastname, status (active/away/inactive). Status will be configured through a small pop up from list. Status will be configured only by the matching user that has the permission to do it
+  - [ ] Save user in firebase DB on login
+  - [ ] Get all users on display rendering and show them in BS table
+  - [ ] Delete User from Database on logout
 - [x] Logout after an amount of time where the system is idle
   - [x] Detect no key and no mouse interaction
   - [x] Detect no focus
@@ -54,3 +58,5 @@ Here is a chart of how the package is set up:
 - Online Demo: `https://chatroomsimpledemo.herokuapp.com/`
 - Firebase tutorials: `https://www.robinwieruch.de/react-firebase-realtime-database/`
 - `https://www.npmjs.com/package/firebase`
+- `https://howtofirebase.com/save-and-query-firebase-data-ed73fb8c6e3a`
+- `https://gist.github.com/anantn/4325082`
