@@ -5,35 +5,37 @@ const PROJECTID = process.env.PROJECTID;
 const STORAGEBUCKET = process.env.STORAGEBUCKET;
 const MESSANGINSSENDERID = process.env.MESSANGINSSENDERID;
 
-const app
-  = firebase
-  && firebase.initializeApp({
-    apiKey: APIKEY,
-    authDomain: AUTHDOMAIN,
-    databaseURL: DATABASEURL,
-    projectId: PROJECTID,
-    storageBucket: STORAGEBUCKET,
-    messagingSenderId: MESSANGINSSENDERID,
-  });
-
 const enter = action => {
   let reference,
     usersRef,
     newEntry = {};
   try {
-    const db = app.firebase_.database();
-    console.log('db', db);
+    if (typeof firebase !== 'undefined') {
+      const app
+        = firebase
+        && firebase.initializeApp({
+          apiKey: APIKEY,
+          authDomain: AUTHDOMAIN,
+          databaseURL: DATABASEURL,
+          projectId: PROJECTID,
+          storageBucket: STORAGEBUCKET,
+          messagingSenderId: MESSANGINSSENDERID,
+        });
 
-    reference = db.ref('chatroomsimpledemo');
+      const db = app.firebase_.database();
+      console.log('db', db);
 
-    // keep reference in redux status for later use
-    usersRef = reference.child('users');
+      reference = db.ref('chatroomsimpledemo');
 
-    newEntry = usersRef.push({
-      firstname: action.firstname,
-      lastname: action.lastname,
-      status: 'active',
-    });
+      // keep reference in redux status for later use
+      usersRef = reference.child('users');
+
+      newEntry = usersRef.push({
+        firstname: action.firstname,
+        lastname: action.lastname,
+        status: 'active',
+      });
+    }
   } catch (e) {
     console.log('error', e);
   }
