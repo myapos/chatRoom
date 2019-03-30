@@ -6,7 +6,9 @@ const { CLIENT_PORT, BASE_URL } = require('./constants/common');
 // console.log('CLIENT_PORT', CLIENT_PORT);
 
 // const PORT = 1234;
+require('dotenv').config();
 
+console.log('dfvdfgds', process.env.AUTHDOMAIN);
 const config = {
   entry: {
     main: './src/client/index.js',
@@ -76,8 +78,16 @@ const config = {
     }),
     new webpack.DefinePlugin({
       'process.env.PORT': process.env.PORT,
+      'process.env.APIKEY': process.env.APIKEY,
+      'process.env.AUTHDOMAIN': process.env.AUTHDOMAIN,
+      'process.env.DATABASEURL': process.env.DATABASEURL,
+      'process.env.PROJECTID': process.env.PROJECTID,
+      'process.env.STORAGEBUCKET': process.env.STORAGEBUCKET,
+      'process.env.MESSANGINSSENDERID': process.env.MESSANGINSSENDERID,
     }),
   ],
 };
+
+// console.log('process.env.APIKEY', process.env.APIKEY);
 
 module.exports = config;

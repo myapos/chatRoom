@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Loader from 'react-loader-spinner';
 import PropTypes from 'prop-types';
-import actions from '../store/actions';
+import * as actions from '../store/actions';
 import '../css/bootstrap.min.css';
 import '../../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 
@@ -19,7 +19,7 @@ class ListOfUsers extends Component {
     };
 
     const {
-      loggedUsers: { users },
+      loggedUsersAr: { users },
     } = this.props;
 
     const mappedUsers = [];
@@ -71,7 +71,7 @@ class ListOfUsers extends Component {
 
 ListOfUsers.propTypes = {
   listOfUsers: PropTypes.object,
-  loggedUsers: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  loggedUsersAr: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 export default connect(
   state => state,

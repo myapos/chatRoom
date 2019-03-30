@@ -9,7 +9,7 @@ const initialState = {
   firstScreen: true,
   who: '',
   ref: {},
-  loggedUsers: {},
+  loggedUsersAr: {},
 };
 
 export default initialState;

@@ -48,7 +48,7 @@ Here is a chart of how the package is set up:
   - [x] Get all users on display rendering and show them in BS table
   - [x] Delete User from Database on logout
   - [ ] setup node env for firebase and production
-  - [ ] bug fix for build files with firebase
+  - [x] bug fix for build files with firebase --> removed package dependency and added it as external one with injecting scripti in index.html
 - [x] Logout after an amount of time where the system is idle
   - [x] Detect no key and no mouse interaction
   - [x] Detect no focus

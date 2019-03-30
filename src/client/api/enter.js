@@ -1,14 +1,33 @@
-// import * as firebase from 'firebase';
+// // import * as firebase from 'firebase';
+
+// const app
+//   = firebase
+//   && firebase.initializeApp({
+//     apiKey: 'AIzaSyAej6ah5FpsE1N3eqDsKTUcDA9zfHK6zCY',
+//     authDomain: 'chatroomsimpledemo.firebaseapp.com',
+//     databaseURL: 'https://chatroomsimpledemo.firebaseio.com',
+//     projectId: 'chatroomsimpledemo',
+//     storageBucket: 'chatroomsimpledemo.appspot.com',
+//     messagingSenderId: '327710006605',
+//   });
+
+debugger;
+const APIKEY = process.env.APIKEY;
+const AUTHDOMAIN = process.env.AUTHDOMAIN;
+const DATABASEURL = process.env.DATABASEURL;
+const PROJECTID = process.env.PROJECTID;
+const STORAGEBUCKET = process.env.STORAGEBUCKET;
+const MESSANGINSSENDERID = process.env.MESSANGINSSENDERID;
 
 const app
   = firebase
   && firebase.initializeApp({
-    apiKey: 'AIzaSyAej6ah5FpsE1N3eqDsKTUcDA9zfHK6zCY',
-    authDomain: 'chatroomsimpledemo.firebaseapp.com',
-    databaseURL: 'https://chatroomsimpledemo.firebaseio.com',
-    projectId: 'chatroomsimpledemo',
-    storageBucket: 'chatroomsimpledemo.appspot.com',
-    messagingSenderId: '327710006605',
+    apiKey: APIKEY,
+    authDomain: AUTHDOMAIN,
+    databaseURL: DATABASEURL,
+    projectId: PROJECTID,
+    storageBucket: STORAGEBUCKET,
+    messagingSenderId: MESSANGINSSENDERID,
   });
 
 const enter = action => {

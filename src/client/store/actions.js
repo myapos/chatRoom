@@ -92,7 +92,7 @@ export const refDb = (ref, usersRef, newEntry) => ({
   newEntry,
 });
 
-export const loggedUsers = loggedUsers => ({
+export const loggedUsers = loggedUsersAr => ({
   type: LOGGED_USERS,
-  loggedUsers,
+  loggedUsersAr,
 });

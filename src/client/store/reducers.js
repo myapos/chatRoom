@@ -14,7 +14,7 @@ const reducer = (state = {}, action) => {
     reference,
     usersRef,
     newEntry,
-    loggedUsers,
+    loggedUsersAr,
   } = action;
 
   switch (type) {
@@ -123,7 +123,7 @@ const reducer = (state = {}, action) => {
     case actions.LOGGED_USERS:
       return {
         ...state,
-        loggedUsers,
+        loggedUsersAr,
       };
     case actions.REF_DB:
       return {
