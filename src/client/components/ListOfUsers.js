@@ -18,9 +18,16 @@ class ListOfUsers extends Component {
       defaultSortName: 'name',
     };
 
-    const {
-      loggedUsersAr: { users },
-    } = this.props;
+    const { loggedUsersAr } = this.props;
+
+    let users = {};
+
+    if (Object.keys(loggedUsersAr).length) {
+      users = loggedUsersAr.users;
+    }
+    // const {
+    //   loggedUsersAr: { users },
+    // } = this.props;
 
     const mappedUsers = [];
     if (users && Object.keys(users).length) {

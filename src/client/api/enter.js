@@ -11,16 +11,21 @@ const enter = action => {
     newEntry = {};
   try {
     if (typeof firebase !== 'undefined') {
-      const app
-        = firebase
-        && firebase.initializeApp({
-          apiKey: APIKEY,
-          authDomain: AUTHDOMAIN,
-          databaseURL: DATABASEURL,
-          projectId: PROJECTID,
-          storageBucket: STORAGEBUCKET,
-          messagingSenderId: MESSANGINSSENDERID,
-        });
+      let app; // initialize
+      if (!firebase.apps.length) {
+        app
+          = firebase
+          && firebase.initializeApp({
+            apiKey: APIKEY,
+            authDomain: AUTHDOMAIN,
+            databaseURL: DATABASEURL,
+            projectId: PROJECTID,
+            storageBucket: STORAGEBUCKET,
+            messagingSenderId: MESSANGINSSENDERID,
+          });
+      } else {
+        app = firebase.apps[0];
+      }
 
       const db = app.firebase_.database();
       console.log('db', db);
