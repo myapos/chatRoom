@@ -1,5 +1,5 @@
 /* eslint camelcase: 1 */
-import { call, put, select, takeEvery, delay } from 'redux-saga/effects';
+import { call, put, select, takeEvery } from 'redux-saga/effects';
 
 import * as api from '../api';
 import * as actions from '../store/actions';

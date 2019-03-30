@@ -13,34 +13,6 @@ class ListOfUsers extends Component {
     console.log('did mount');
   }
   render () {
-    // debugger;
-    const listOfUsers = [
-      {
-        id: 1,
-        firstname: 'myros',
-        lastname: 'apostolakis',
-        status: 'active',
-      },
-      {
-        id: 2,
-        firstname: 'm1',
-        lastname: 'm1',
-        status: 'inactive',
-      },
-      {
-        id: 3,
-        firstname: 'm2',
-        lastname: 'm2',
-        status: 'away',
-      },
-      {
-        id: 4,
-        firstname: 'm3',
-        lastname: 'm3',
-        status: 'active',
-      },
-    ];
-
     const options = {
       defaultSortName: 'name',
     };
@@ -59,6 +31,7 @@ class ListOfUsers extends Component {
       }
     }
 
+    // prettier-ignore
     return (
       <div className="listOfUsersWrapper">
         <div className="header">Logged in users</div>
@@ -69,8 +42,11 @@ class ListOfUsers extends Component {
             hover
             condensed
             options={options}>
-            <TableHeaderColumn dataField="id" dataSort
-hidden isKey>
+            <TableHeaderColumn
+              dataField="id"
+              dataSort
+              hidden
+              isKey>
               ID
             </TableHeaderColumn>
             <TableHeaderColumn dataField="firstname" dataSort>
