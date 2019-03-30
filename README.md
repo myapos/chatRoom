@@ -52,7 +52,7 @@ Here is a chart of how the package is set up:
 - [x] Logout after an amount of time where the system is idle
   - [x] Detect no key and no mouse interaction
   - [x] Detect no focus
-- [ ] Attach files / images etc --> this may not be implemented
+- [x] Attach files / images etc --> this may not be implemented
 
 # NOTES
 
