@@ -5,11 +5,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const config = require('./webpack.config');
 
-require('dotenv').config();
-
-console.log('dfvdfgds', process.env);
-// console.log(config);
-
 // Reflect.deleteProperty(config, 'devServer');
 Reflect.deleteProperty(config, 'plugins');
 Reflect.deleteProperty(config.module, 'rules');
@@ -115,12 +110,14 @@ config.plugins = [
   }),
   new webpack.DefinePlugin({
     'process.env.PORT': process.env.PORT,
-    // 'process.env.APIKEY': process.env.APIKEY,
-    // 'process.env.AUTHDOMAIN': process.env.AUTHDOMAIN,
-    // 'process.env.DATABASEURL': process.env.DATABASEURL,
-    // 'process.env.PROJECTID': process.env.PROJECTID,
-    // 'process.env.STORAGEBUCKET': process.env.STORAGEBUCKET,
-    // 'process.env.MESSANGINSSENDERID': process.env.MESSANGINSSENDERID,
+    'process.env.APIKEY': JSON.stringify(process.env.APIKEY),
+    'process.env.AUTHDOMAIN': JSON.stringify(process.env.AUTHDOMAIN),
+    'process.env.DATABASEURL': JSON.stringify(process.env.DATABASEURL),
+    'process.env.PROJECTID': JSON.stringify(process.env.PROJECTID),
+    'process.env.STORAGEBUCKET': JSON.stringify(process.env.STORAGEBUCKET),
+    'process.env.MESSANGINSSENDERID': JSON.stringify(
+      process.env.MESSANGINSSENDERID
+    ),
   }),
 ];
 
