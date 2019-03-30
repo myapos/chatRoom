@@ -19,9 +19,11 @@ describe('App testing', () => {
   test('not entered', async () => {
     // mount(<Enter props={props} />);
     const tree = await renderer
-      .create(<Provider store={configureStore(initialState)}>
-        <App />
-      </Provider>)
+      .create(
+        <Provider store={configureStore(initialState)}>
+          <App />
+        </Provider>
+      )
       .toJSON();
 
     await expect(tree).toMatchSnapshot();

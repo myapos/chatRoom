@@ -2,39 +2,43 @@
 
 exports[`App testing not entered 1`] = `
 <div
-  className="wrapper"
-  onClick={[Function]}
-  onFocus={[Function]}
+  className="bigWrapper"
 >
   <div
-    className="enter"
+    className="wrapper"
+    onClick={[Function]}
+    onFocus={[Function]}
   >
     <div
-      className="introText"
+      className="enter"
     >
-       Please enter your Name and hit enter!
-    </div>
-    <div
-      className="inputs"
-    >
-      <input
-        className="holder"
-        onKeyPress={[Function]}
-        placeholder="name"
-        type="text"
-      />
-      <input
-        className="holder"
-        onKeyPress={[Function]}
-        placeholder="lastname"
-        type="text"
-      />
-    </div>
-    <div
-      className="myBtn clearFloat"
-      onClick={[Function]}
-    >
-      Enter
+      <div
+        className="introText"
+      >
+         Please enter your Name and hit enter!
+      </div>
+      <div
+        className="inputs"
+      >
+        <input
+          className="holder"
+          onKeyPress={[Function]}
+          placeholder="name"
+          type="text"
+        />
+        <input
+          className="holder"
+          onKeyPress={[Function]}
+          placeholder="lastname"
+          type="text"
+        />
+      </div>
+      <div
+        className="myBtn clearFloat"
+        onClick={[Function]}
+      >
+        Enter
+      </div>
     </div>
   </div>
 </div>

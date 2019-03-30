@@ -7,6 +7,8 @@ export const ENTER = 'ENTER';
 
 export const EXIT = 'EXIT';
 
+export const SAGAS_EXIT = 'SAGAS_EXIT';
+
 export const SET_USER_INFO = 'SET_USER_INFO';
 
 export const SET_PREVIOUS_DATA = 'SET_PREVIOUS_DATA';
@@ -22,6 +24,12 @@ export const SET_IDLE_INTERVAL = 'SET_IDLE_INTERVAL';
 export const RESET_IDLE_TICK_TIMER = 'RESET_IDLE_TICK_TIMER';
 
 export const LOGGED_OUT = 'LOGGED_OUT';
+
+/* FIREBASE ACTIONS */
+
+export const REF_DB = 'REF_DB';
+
+export const LOGGED_USERS = 'LOGGED_USERS';
 
 export const entryChange = data => ({
   type: ENTRY,
@@ -75,4 +83,16 @@ export const loggedOut = () => ({
 export const whoIsTyping = who => ({
   type: WHO_IS_TYPING,
   who,
+});
+
+export const refDb = (ref, usersRef, newEntry) => ({
+  type: REF_DB,
+  ref,
+  usersRef,
+  newEntry,
+});
+
+export const loggedUsers = loggedUsersAr => ({
+  type: LOGGED_USERS,
+  loggedUsersAr,
 });

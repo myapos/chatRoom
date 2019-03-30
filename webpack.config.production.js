@@ -5,8 +5,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const config = require('./webpack.config');
 
-// console.log(config);
-
 // Reflect.deleteProperty(config, 'devServer');
 Reflect.deleteProperty(config, 'plugins');
 Reflect.deleteProperty(config.module, 'rules');
@@ -112,6 +110,14 @@ config.plugins = [
   }),
   new webpack.DefinePlugin({
     'process.env.PORT': process.env.PORT,
+    'process.env.APIKEY': JSON.stringify(process.env.APIKEY),
+    'process.env.AUTHDOMAIN': JSON.stringify(process.env.AUTHDOMAIN),
+    'process.env.DATABASEURL': JSON.stringify(process.env.DATABASEURL),
+    'process.env.PROJECTID': JSON.stringify(process.env.PROJECTID),
+    'process.env.STORAGEBUCKET': JSON.stringify(process.env.STORAGEBUCKET),
+    'process.env.MESSANGINSSENDERID': JSON.stringify(
+      process.env.MESSANGINSSENDERID
+    ),
   }),
 ];
 
