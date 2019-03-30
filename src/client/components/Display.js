@@ -12,14 +12,30 @@ class Display extends Component {
       idleInterval,
       setIdleInterval,
       setIdleTickTimer,
-      ref,
+      reference,
+      loggedUsers,
     } = this.props;
 
     if (entered !== '' && idleInterval === 0) {
-      const interval = setInterval(() => {
+      const interval = setInterval(async () => {
         // increase tick
         const newTick = this.props.tick + idleStep;
         setIdleTickTimer(newTick);
+
+        const { reference } = this.props;
+        const ref = reference;
+        console.log('ref should:', ref);
+        ref
+          && ref.on(
+            'value',
+            snapshot => {
+              console.log(snapshot.val());
+              loggedUsers(snapshot.val());
+            },
+            errorObject => {
+              console.log('The read failed: ' + errorObject.code);
+            }
+          );
       }, idleStep);
 
       // keep interval refenrence to the store
@@ -28,7 +44,7 @@ class Display extends Component {
   }
 
   shouldComponentUpdate (nextProps, nextState) {
-    const { entered, tick, idleInterval, ref } = nextProps;
+    const { entered, tick, idleInterval, reference, loggedUsers } = nextProps;
 
     if (entered !== '' && tick > idleThreshold) {
       // clear interval
@@ -36,6 +52,8 @@ class Display extends Component {
       nextProps.exit();
       nextProps.loggedOut();
     }
+    // debugger;
+    console.log('tick', tick);
 
     return true;
   }

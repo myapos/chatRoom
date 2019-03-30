@@ -11,7 +11,7 @@ const reducer = (state = {}, action) => {
     idleInterval,
     tick,
     who,
-    ref,
+    reference,
     usersRef,
     newEntry,
     loggedUsers,
@@ -73,6 +73,7 @@ const reducer = (state = {}, action) => {
         ...state,
         firstname: '',
         lastname: '',
+        loggedUsers: [],
       };
 
     case actions.SET_USER_INFO:
@@ -120,7 +121,6 @@ const reducer = (state = {}, action) => {
       };
 
     case actions.LOGGED_USERS:
-      debugger;
       return {
         ...state,
         loggedUsers,
@@ -128,7 +128,7 @@ const reducer = (state = {}, action) => {
     case actions.REF_DB:
       return {
         ...state,
-        ref,
+        reference,
         usersRef,
         newEntry,
       };

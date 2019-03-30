@@ -8,6 +8,8 @@ const initialState = {
   isLoggedIn: false,
   firstScreen: true,
   who: '',
+  ref: {},
+  loggedUsers: {},
 };
 
 export default initialState;

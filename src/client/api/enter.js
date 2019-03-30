@@ -10,17 +10,17 @@ const app = firebase.initializeApp({
 });
 
 const enter = async action => {
-  let ref,
+  let reference,
     usersRef,
     newEntry = {};
   try {
     const db = app.firebase_.database();
     console.log('db', db);
 
-    ref = db.ref('chatroomsimpledemo');
+    reference = db.ref('chatroomsimpledemo');
 
-    // keep ref in redux status for later use
-    usersRef = ref.child('users');
+    // keep reference in redux status for later use
+    usersRef = reference.child('users');
 
     newEntry = usersRef.push({
       firstname: action.firstname,
@@ -32,7 +32,7 @@ const enter = async action => {
   }
 
   return {
-    ref,
+    reference,
     usersRef,
     newEntry,
   };
