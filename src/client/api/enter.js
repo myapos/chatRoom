@@ -1,13 +1,15 @@
-import * as firebase from 'firebase';
+// import * as firebase from 'firebase';
 
-const app = firebase.initializeApp({
-  apiKey: 'AIzaSyAej6ah5FpsE1N3eqDsKTUcDA9zfHK6zCY',
-  authDomain: 'chatroomsimpledemo.firebaseapp.com',
-  databaseURL: 'https://chatroomsimpledemo.firebaseio.com',
-  projectId: 'chatroomsimpledemo',
-  storageBucket: 'chatroomsimpledemo.appspot.com',
-  messagingSenderId: '327710006605',
-});
+const app
+  = firebase
+  && firebase.initializeApp({
+    apiKey: 'AIzaSyAej6ah5FpsE1N3eqDsKTUcDA9zfHK6zCY',
+    authDomain: 'chatroomsimpledemo.firebaseapp.com',
+    databaseURL: 'https://chatroomsimpledemo.firebaseio.com',
+    projectId: 'chatroomsimpledemo',
+    storageBucket: 'chatroomsimpledemo.appspot.com',
+    messagingSenderId: '327710006605',
+  });
 
 const enter = action => {
   let reference,
