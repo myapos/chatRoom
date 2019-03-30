@@ -12,7 +12,6 @@ class Display extends Component {
       idleInterval,
       setIdleInterval,
       setIdleTickTimer,
-      reference,
       loggedUsers,
     } = this.props;
 
@@ -24,12 +23,12 @@ class Display extends Component {
 
         const { reference } = this.props;
         const ref = reference;
-        console.log('ref should:', ref);
+        // console.log('ref should:', ref);
         ref
           && ref.on(
             'value',
             snapshot => {
-              console.log(snapshot.val());
+              // console.log(snapshot.val());
               loggedUsers(snapshot.val());
             },
             errorObject => {
@@ -52,8 +51,6 @@ class Display extends Component {
       nextProps.exit();
       nextProps.loggedOut();
     }
-    // debugger;
-    console.log('tick', tick);
 
     return true;
   }
@@ -102,6 +99,7 @@ Display.propTypes = {
   idleInterval: PropTypes.number,
   setIdleInterval: PropTypes.func,
   setIdleTickTimer: PropTypes.func,
+  loggedUsers: PropTypes.func,
   loggedOut: PropTypes.func,
   received: PropTypes.array,
 };

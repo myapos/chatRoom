@@ -1,9 +1,10 @@
 const exit = newEntry => {
   try {
     // delete entry from firebase
-    newEntry.remove(error => {
-      alert(error ? 'Uh oh!' : 'Success!');
-    });
+    newEntry
+      && newEntry.remove(error => {
+        alert(error ? 'Uh oh!' : 'Success!');
+      });
   } catch (e) {
     console.log('error', e);
   }

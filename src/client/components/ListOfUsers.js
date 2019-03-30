@@ -49,42 +49,46 @@ class ListOfUsers extends Component {
       loggedUsers: { users },
     } = this.props;
 
-    console.log('logged Users:', users);
-
     const mappedUsers = [];
     if (users && Object.keys(users).length) {
       for (const key in users) {
-        mappedUsers.push(users[key]);
+        if (users.hasOwnProperty(key)) {
+          users[key].id = key;
+          mappedUsers.push(users[key]);
+        }
       }
     }
 
     return (
       <div className="listOfUsersWrapper">
         <div className="header">Logged in users</div>
-        <BootstrapTable
-          data={mappedUsers}
-          striped
-          hover
-          condensed
-          options={options}>
-          <TableHeaderColumn dataField="id" dataSort
+        {mappedUsers.length ? (
+          <BootstrapTable
+            data={mappedUsers}
+            striped
+            hover
+            condensed
+            options={options}>
+            <TableHeaderColumn dataField="id" dataSort
 hidden isKey>
-            ID
-          </TableHeaderColumn>
-          <TableHeaderColumn dataField="firstname" dataSort>
-            First Name
-          </TableHeaderColumn>
-          <TableHeaderColumn dataField="lastname" dataSort>
-            Last Name
-          </TableHeaderColumn>
-        </BootstrapTable>
+              ID
+            </TableHeaderColumn>
+            <TableHeaderColumn dataField="firstname" dataSort>
+              First Name
+            </TableHeaderColumn>
+            <TableHeaderColumn dataField="lastname" dataSort>
+              Last Name
+            </TableHeaderColumn>
+          </BootstrapTable>
+        ) : null}
       </div>
     );
   }
 }
 
 ListOfUsers.propTypes = {
-  listOfUsers: PropTypes.array,
+  listOfUsers: PropTypes.object,
+  loggedUsers: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 export default connect(
   state => state,
