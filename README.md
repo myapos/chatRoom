@@ -27,7 +27,7 @@ Here is a chart of how the package is set up:
 # Env variables
 
 If you want to use it in your machine you have to configure firebase settings with environment variables. Please see the example below.
-The values have to be replaced by the values of your app.
+The values have to be replaced by the values of your app. Place these values in ~/.profile files and restart your machine to activate.
 
 - export APIKEY="XXXXXXXXXXXXXXXX"
 - export AUTHDOMAIN="XXXXXXXXXXXXXXXX"
