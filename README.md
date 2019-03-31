@@ -1,6 +1,6 @@
 # Chat Room Demo
 
-A demo implementation of a chat room that is using websockets protocol with socket.io, React and Redux
+A demo implementation of a chat room that is using websockets protocol with socket.io, firebase, React and Redux
 
 # Commands
 
@@ -23,6 +23,18 @@ Here is a chart of how the package is set up:
 - dependencygraph.svg is generated in ./graph folder
 
 ![Graph](./graph/dependencygraph.svg)
+
+# Env variables
+
+If you want to use it in your machine you have to configure firebase settings with environment variables. Please see the example below.
+The values have to be replaced by the values of your app.
+
+- export APIKEY="XXXXXXXXXXXXXXXX"
+- export AUTHDOMAIN="XXXXXXXXXXXXXXXX"
+- export DATABASEURL="XXXXXXXXXXXXXXXX"
+- export PROJECTID="XXXXXXXXXXXXXXXX"
+- export STORAGEBUCKET="XXXXXXXXXXXXXXXX"
+- export MESSANGINSSENDERID="XXXXXXXXXXXXXXXX"
 
 # Puppeteer and CircleCI
 
