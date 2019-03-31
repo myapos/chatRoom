@@ -53,6 +53,7 @@ Here is a chart of how the package is set up:
   - [x] Detect no key and no mouse interaction
   - [x] Detect no focus
 - [x] Attach files / images etc --> this may not be implemented
+- [ ] Add more stories
 
 # NOTES
 

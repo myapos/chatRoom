@@ -13,6 +13,33 @@ module.exports = {
   module: {
     rules: [
       // add your custom rules.
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+        use: 'file-loader',
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+      },
+      {
+        test: /\.styl$/,
+        // use: 'css-loader',
+        use: [
+          {
+            loader: 'style-loader', // creates style nodes from JS strings
+          },
+          {
+            loader: 'css-loader', // translates CSS into CommonJS
+          },
+          {
+            loader: 'stylus-loader', // compiles Stylus to CSS
+          },
+        ],
+      },
     ],
   },
 };
